@@ -9,10 +9,21 @@ export var settingsListAnime = {
   speed: 400,
   responsive: [
     {
-      breakpoint: 480,
+      breakpoint: 360,
       settings: {
         className: 'center',
         centerMode: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: false,
+        autoplay: true,
+      }
+    },
+    {
+      breakpoint: 320,
+      settings: {
+        className: 'center',
+        centerMode: !true,
         slidesToShow: 1,
         slidesToScroll: 1,
         variableWidth: false,

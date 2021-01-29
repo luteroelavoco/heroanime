@@ -38,7 +38,7 @@ export const Container = styled.div<backgroundprops>`
     height:100%;
     background-image: url(${props => props.coverImage.original});
     background-size: 800px;
-    background-position: 50% 0px;
+    background-position: 50% -50px;
   }
 
 `

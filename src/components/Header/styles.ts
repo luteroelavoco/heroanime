@@ -15,9 +15,10 @@ export const Title = styled.strong`
   font-weight: 300;
   color: ${props => props.theme.colors.white};
   letter-spacing: 1px;
-  margin-top: 350px;
+  margin-top: 330px;
   @media (max-width: 380px){
     font-size: 2rem;
+    margin-top: 280px;
   }
 `
 

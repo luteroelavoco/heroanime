@@ -15,6 +15,7 @@ const Home: React.FC = () => {
       </Head>
       <Header anime={TopAnime} />
       <ListAnimes title="Latest animes" seasonYear={getCurrenYear()} />
+      
     </Container>
   )
 }
