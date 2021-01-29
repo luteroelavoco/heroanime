@@ -11,13 +11,7 @@ const Home: React.FC = () => {
       <Head>
         <title>Hero Anime</title>
       </Head>
-      <header>
-        <Nav />
-        <Header anime={TopAnime} />
-      </header>
-      <main>
-
-      </main>
+      <Header anime={TopAnime} />
     </Container>
   )
 }

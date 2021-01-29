@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import {
   Container,
   Logo,
@@ -22,18 +23,23 @@ import {
 } from 'react-icons/fa'
 
 const Nav: React.FC = () => {
-  const [showMenu, setShowMenu] = useState<boolean>(false)
-  const [transparent, setTransparent] = useState<boolean>(true);
+  const router = useRouter()
+  const [showMenu, setShowMenu] = useState(false)
+  const [transparent, setTransparent] = useState(true)
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     const onScroll = e => {
-      if(window.scrollY > 0)
-        setTransparent(false);
-      else
-        setTransparent(true)
-    };
-    window.addEventListener("scroll", onScroll);
-  }, []);
+      if (window.scrollY > 0) setTransparent(false)
+      else setTransparent(true)
+    }
+    window.addEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    if (search.length > 0) router.push('/animes?search='+search)
+    else router.push('/')
+  }, [search])
 
   return (
     <Container transparent={transparent}>
@@ -44,16 +50,21 @@ const Nav: React.FC = () => {
         </MenuTogle>
       </MenuBar>
       <NavBar>
-          <Menu show={showMenu}>
-            <MenuItem> Start</MenuItem>
-            <MenuItem> Recents</MenuItem>
-            <MenuItem> Trending</MenuItem>
-            <MenuItem> Categories</MenuItem>
-          </Menu>
+        <Menu show={showMenu}>
+          <MenuItem> Start</MenuItem>
+          <MenuItem> Recents</MenuItem>
+          <MenuItem> Trending</MenuItem>
+          <MenuItem> Categories</MenuItem>
+        </Menu>
         <MenuSettings>
           <SearchDiv>
             <FaSearch />
-            <SearchInput type="text" placeholder="search here your animes" />
+            <SearchInput
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="search here your animes"
+            />
           </SearchDiv>
           <SocialMedias changeColor={transparent}>
             <FaFacebookF />
