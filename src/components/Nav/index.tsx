@@ -56,8 +56,8 @@ const Nav: React.FC = () => {
           <FaBars />
         </MenuTogle>
       </MenuBar>
-      <NavBar>
-        <Menu show={showMenu}>
+      <NavBar show={showMenu}>
+        <Menu>
           <MenuItem> Start</MenuItem>
           <MenuItem> Recents</MenuItem>
           <MenuItem> Trending</MenuItem>

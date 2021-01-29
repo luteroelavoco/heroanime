@@ -19,7 +19,7 @@ export const Container = styled.div<ContainerProps>`
   top: 0;
   padding: 12px 20px;
   align-items: center;
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     padding: 12px 0px;
   }
@@ -28,7 +28,7 @@ export const Container = styled.div<ContainerProps>`
 export const MenuBar = styled.div`
   display: flex;
   align-items: center;
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     width: 100%;
     justify-content: space-between;
     padding: 0 20px;
@@ -49,31 +49,23 @@ export const MenuTogle = styled.div`
   &:hover {
     color: ${props => props.theme.colors.primaryColor};
   }
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     display: block;
   }
 `
 
-export const NavBar = styled.div`
+export const NavBar = styled.div<MenuProps>`
   width: 100%;
   display: flex;
   margin-left: 20px;
   align-items: center;
   justify-content: space-between;
-  @media (max-width: 480px) {
-    width: 100%;
-  }
-`
-
-export const Menu = styled.ul<MenuProps>`
-  display: inline-flex;
-  @media (max-width: 480px) {
-    display: flex;
-    width: 100vw;
+  @media (max-width: 768px) {
     flex-direction: column;
-    align-items: center;
-    background-color: ${props => props.theme.colors.backgroundColor};
+    justify-content:flex-start;
+    width: 100%;
     transition: all 1s ease-out;
+    background-color: ${props => props.theme.colors.backgroundColor};
     ${props =>
       props.show
         ? css`
@@ -88,6 +80,15 @@ export const Menu = styled.ul<MenuProps>`
   }
 `
 
+export const Menu = styled.ul`
+  display: inline-flex;
+  @media (max-width: 768px) {
+    display: inline-block;
+    width: 100vw;
+    transition: all 1s ease-out;
+  }
+`
+
 export const MenuItem = styled.li`
   color: ${props => props.theme.colors.white};
   margin-left: 10px;
@@ -98,7 +99,7 @@ export const MenuItem = styled.li`
   &:hover {
     color: ${props => props.theme.colors.primaryColor};
   }
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     margin-top: 10px;
     padding: 10px 0;
     font-size: 14px;
@@ -116,9 +117,13 @@ export const MenuItem = styled.li`
 
 export const MenuSettings = styled.div`
   display: flex;
-  @media (max-width: 600px) {
-    display: none;
+  @media (max-width: 768px) {
+   width: 100%;
+   justify-content: space-between;
+   margin-left: 20px;
+   margin-top: 10px;
   }
+
 `
 
 export const SearchDiv = styled.div`
@@ -131,9 +136,7 @@ export const SearchDiv = styled.div`
   svg {
     margin-left: 12px;
   }
-  @media (max-width: 810px) {
-    display: none;
-  }
+
 `
 
 export const SearchInput = styled.input`
@@ -172,5 +175,8 @@ export const SocialMedias = styled.div<MidiaProps>`
     &:hover {
       color: ${props => props.theme.colors.primaryColor};
     }
+  }
+  @media (max-width: 840px) {
+    display: none;
   }
 `
