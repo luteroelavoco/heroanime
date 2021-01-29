@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   Container,
   Logo,
@@ -22,10 +22,21 @@ import {
 } from 'react-icons/fa'
 
 const Nav: React.FC = () => {
-  const [showMenu, setShowMenu] = useState(false)
-  
+  const [showMenu, setShowMenu] = useState<boolean>(false)
+  const [transparent, setTransparent] = useState<boolean>(true);
+
+  useEffect(() => {
+    const onScroll = e => {
+      if(window.scrollY > 0)
+        setTransparent(false);
+      else
+        setTransparent(true)
+    };
+    window.addEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <Container>
+    <Container transparent={transparent}>
       <MenuBar>
         <Logo> HeroAnime</Logo>
         <MenuTogle onClick={() => setShowMenu(!showMenu)}>
@@ -44,7 +55,7 @@ const Nav: React.FC = () => {
             <FaSearch />
             <SearchInput type="text" placeholder="search here your animes" />
           </SearchDiv>
-          <SocialMedias>
+          <SocialMedias changeColor={transparent}>
             <FaFacebookF />
             <FaInstagram />
             <FaYoutube />

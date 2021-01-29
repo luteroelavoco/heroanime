@@ -1,70 +1,70 @@
-
 export const TopAnime = {
-  id: '13',
+  id: '2',
   type: 'anime',
   links: {
-    self: 'https://kitsu.io/api/edge/anime/13'
+    self: 'https://kitsu.io/api/edge/anime/2'
   },
   attributes: {
-    createdAt: '2013-02-20T16:00:26.866Z',
-    updatedAt: '2021-01-29T00:00:07.606Z',
-    slug: 'prince-of-tennis',
+    createdAt: '2013-02-20T16:00:16.085Z',
+    updatedAt: '2021-01-29T01:03:05.962Z',
+    slug: 'cowboy-bebop-tengoku-no-tobira',
     synopsis:
-      "The world of tennis is harsh and highly competitive. Numerous schools from Japan battle it out to determine the best of the best. Seishin Gakuen Junior High School, more commonly known as Seigaku, is one of the most prominent contestants in this battle of the finest. Their team line-up gets even stronger with the sudden arrival of a young prodigy from the West, Ryouma Echizen, who is determined to prove himself and escape the towering shadow of his legendary father. This fine addition changes the team forever.Prince of Tennis follows the heartwarming and inspirational story of Ryouma on his quest to become one of the best tennis players the country has ever seen. He pushes himself hard so that he can one day surpass his father’s name and his own personal expectations. Alongside the rest of the Seigaku team, Ryouma fights to make his and his teammate's dreams come true.",
+      'Another day, another bounty—such is the life of the often unlucky crew of the Bebop. However, this routine is interrupted when Faye, who is chasing a fairly worthless target on Mars, witnesses an oil tanker suddenly explode, causing mass hysteria. As casualties mount due to a strange disease spreading through the smoke from the blast, a whopping three hundred million woolong price is placed on the head of the supposed perpetrator. With lives at stake and a solution to their money problems in sight, the Bebop crew springs into action. Spike, Jet, Faye, and Edward, followed closely by Ein, split up to pursue different leads across Alba City. Through their individual investigations, they discover a cover-up scheme involving a pharmaceutical company, revealing a plot that reaches much further than the ragtag team of bounty hunters could have realized. [Written by MAL Rewrite]',
     description:
-      "The world of tennis is harsh and highly competitive. Numerous schools from Japan battle it out to determine the best of the best. Seishin Gakuen Junior High School, more commonly known as Seigaku, is one of the most prominent contestants in this battle of the finest. Their team line-up gets even stronger with the sudden arrival of a young prodigy from the West, Ryouma Echizen, who is determined to prove himself and escape the towering shadow of his legendary father. This fine addition changes the team forever.Prince of Tennis follows the heartwarming and inspirational story of Ryouma on his quest to become one of the best tennis players the country has ever seen. He pushes himself hard so that he can one day surpass his father’s name and his own personal expectations. Alongside the rest of the Seigaku team, Ryouma fights to make his and his teammate's dreams come true.",
-    coverImageTopOffset: 200,
+      'Another day, another bounty—such is the life of the often unlucky crew of the Bebop. However, this routine is interrupted when Faye, who is chasing a fairly worthless target on Mars, witnesses an oil tanker suddenly explode, causing mass hysteria. As casualties mount due to a strange disease spreading through the smoke from the blast, a whopping three hundred million woolong price is placed on the head of the supposed perpetrator. With lives at stake and a solution to their money problems in sight, the Bebop crew springs into action. Spike, Jet, Faye, and Edward, followed closely by Ein, split up to pursue different leads across Alba City. Through their individual investigations, they discover a cover-up scheme involving a pharmaceutical company, revealing a plot that reaches much further than the ragtag team of bounty hunters could have realized. [Written by MAL Rewrite]',
+    coverImageTopOffset: 220,
     titles: {
-      en: 'The Prince of Tennis',
-      en_jp: 'Prince of Tennis',
-      ja_jp: 'テニスの王子様'
+      en: 'Cowboy Bebop: The Movie',
+      en_jp: 'Cowboy Bebop: Tengoku no Tobira',
+      en_us: "Cowboy Bebop: Knockin' on Heaven's Door",
+      ja_jp: 'カウボーイビバップ天国の扉'
     },
-    canonicalTitle: 'Prince of Tennis',
-    abbreviatedTitles: ['Tennis no Ouji-sama'],
-    averageRating: '77.96',
+    canonicalTitle: "Cowboy Bebop: Knockin' on Heaven's Door",
+    abbreviatedTitles: [],
+    averageRating: '82.2',
     ratingFrequencies: {
-      2: '42',
-      3: '0',
-      4: '25',
-      5: '2',
-      6: '30',
-      7: '2',
-      8: '121',
-      9: '0',
-      10: '212',
-      11: '2',
-      12: '513',
-      13: '13',
-      14: '828',
-      15: '20',
-      16: '1049',
-      17: '15',
-      18: '519',
-      19: '8',
-      20: '1066'
+      2: '636',
+      3: '7',
+      4: '43',
+      5: '5',
+      6: '25',
+      7: '3',
+      8: '523',
+      9: '2',
+      10: '167',
+      11: '12',
+      12: '686',
+      13: '36',
+      14: '2283',
+      15: '96',
+      16: '3806',
+      17: '194',
+      18: '3236',
+      19: '131',
+      20: '5975'
     },
-    userCount: 10306,
-    favoritesCount: 147,
-    startDate: '2001-10-10',
-    endDate: '2005-03-23',
+    userCount: 32308,
+    favoritesCount: 308,
+    startDate: '2001-09-01',
+    endDate: '2001-09-01',
     nextRelease: null,
-    popularityRank: 1146,
-    ratingRank: 962,
-    ageRating: 'PG',
-    ageRatingGuide: 'Teens 13 or older',
-    subtype: 'TV',
+    popularityRank: 299,
+    ratingRank: 220,
+    ageRating: 'R',
+    ageRatingGuide: '17+ (violence & profanity)',
+    subtype: 'movie',
     status: 'finished',
     tba: '',
     posterImage: {
-      tiny: 'https://media.kitsu.io/anime/poster_images/13/tiny.jpg?1597604267',
+      tiny: 'https://media.kitsu.io/anime/poster_images/2/tiny.jpg?1597696808',
       small:
-        'https://media.kitsu.io/anime/poster_images/13/small.jpg?1597604267',
+        'https://media.kitsu.io/anime/poster_images/2/small.jpg?1597696808',
       medium:
-        'https://media.kitsu.io/anime/poster_images/13/medium.jpg?1597604267',
+        'https://media.kitsu.io/anime/poster_images/2/medium.jpg?1597696808',
       large:
-        'https://media.kitsu.io/anime/poster_images/13/large.jpg?1597604267',
+        'https://media.kitsu.io/anime/poster_images/2/large.jpg?1597696808',
       original:
-        'https://media.kitsu.io/anime/poster_images/13/original.jpg?1597604267',
+        'https://media.kitsu.io/anime/poster_images/2/original.jpg?1597696808',
       meta: {
         dimensions: {
           tiny: {
@@ -87,13 +87,11 @@ export const TopAnime = {
       }
     },
     coverImage: {
-      tiny: 'https://media.kitsu.io/anime/cover_images/13/tiny.jpg?1597604272',
-      small:
-        'https://media.kitsu.io/anime/cover_images/13/small.jpg?1597604272',
-      large:
-        'https://media.kitsu.io/anime/cover_images/13/large.jpg?1597604272',
+      tiny: 'https://media.kitsu.io/anime/cover_images/2/tiny.jpg?1597702251',
+      small: 'https://media.kitsu.io/anime/cover_images/2/small.jpg?1597702251',
+      large: 'https://media.kitsu.io/anime/cover_images/2/large.jpg?1597702251',
       original:
-        'https://media.kitsu.io/anime/cover_images/13/original.png?1597604272',
+        'https://media.kitsu.io/anime/cover_images/2/original.png?1597702251',
       meta: {
         dimensions: {
           tiny: {
@@ -111,112 +109,111 @@ export const TopAnime = {
         }
       }
     },
-    episodeCount: 178,
-    episodeLength: 22,
-    totalLength: 3916,
-    youtubeVideoId: '',
-    showType: 'TV',
+    episodeCount: 1,
+    episodeLength: 114,
+    totalLength: 114,
+    youtubeVideoId: 'hc7IxJ93jtM',
+    showType: 'movie',
     nsfw: false
   },
   relationships: {
     genres: {
       links: {
-        self: 'https://kitsu.io/api/edge/anime/13/relationships/genres',
-        related: 'https://kitsu.io/api/edge/anime/13/genres'
+        self: 'https://kitsu.io/api/edge/anime/2/relationships/genres',
+        related: 'https://kitsu.io/api/edge/anime/2/genres'
       }
     },
     categories: {
       links: {
-        self: 'https://kitsu.io/api/edge/anime/13/relationships/categories',
-        related: 'https://kitsu.io/api/edge/anime/13/categories'
+        self: 'https://kitsu.io/api/edge/anime/2/relationships/categories',
+        related: 'https://kitsu.io/api/edge/anime/2/categories'
       }
     },
     castings: {
       links: {
-        self: 'https://kitsu.io/api/edge/anime/13/relationships/castings',
-        related: 'https://kitsu.io/api/edge/anime/13/castings'
+        self: 'https://kitsu.io/api/edge/anime/2/relationships/castings',
+        related: 'https://kitsu.io/api/edge/anime/2/castings'
       }
     },
     installments: {
       links: {
-        self: 'https://kitsu.io/api/edge/anime/13/relationships/installments',
-        related: 'https://kitsu.io/api/edge/anime/13/installments'
+        self: 'https://kitsu.io/api/edge/anime/2/relationships/installments',
+        related: 'https://kitsu.io/api/edge/anime/2/installments'
       }
     },
     mappings: {
       links: {
-        self: 'https://kitsu.io/api/edge/anime/13/relationships/mappings',
-        related: 'https://kitsu.io/api/edge/anime/13/mappings'
+        self: 'https://kitsu.io/api/edge/anime/2/relationships/mappings',
+        related: 'https://kitsu.io/api/edge/anime/2/mappings'
       }
     },
     reviews: {
       links: {
-        self: 'https://kitsu.io/api/edge/anime/13/relationships/reviews',
-        related: 'https://kitsu.io/api/edge/anime/13/reviews'
+        self: 'https://kitsu.io/api/edge/anime/2/relationships/reviews',
+        related: 'https://kitsu.io/api/edge/anime/2/reviews'
       }
     },
     mediaRelationships: {
       links: {
         self:
-          'https://kitsu.io/api/edge/anime/13/relationships/media-relationships',
-        related: 'https://kitsu.io/api/edge/anime/13/media-relationships'
+          'https://kitsu.io/api/edge/anime/2/relationships/media-relationships',
+        related: 'https://kitsu.io/api/edge/anime/2/media-relationships'
       }
     },
     characters: {
       links: {
-        self: 'https://kitsu.io/api/edge/anime/13/relationships/characters',
-        related: 'https://kitsu.io/api/edge/anime/13/characters'
+        self: 'https://kitsu.io/api/edge/anime/2/relationships/characters',
+        related: 'https://kitsu.io/api/edge/anime/2/characters'
       }
     },
     staff: {
       links: {
-        self: 'https://kitsu.io/api/edge/anime/13/relationships/staff',
-        related: 'https://kitsu.io/api/edge/anime/13/staff'
+        self: 'https://kitsu.io/api/edge/anime/2/relationships/staff',
+        related: 'https://kitsu.io/api/edge/anime/2/staff'
       }
     },
     productions: {
       links: {
-        self: 'https://kitsu.io/api/edge/anime/13/relationships/productions',
-        related: 'https://kitsu.io/api/edge/anime/13/productions'
+        self: 'https://kitsu.io/api/edge/anime/2/relationships/productions',
+        related: 'https://kitsu.io/api/edge/anime/2/productions'
       }
     },
     quotes: {
       links: {
-        self: 'https://kitsu.io/api/edge/anime/13/relationships/quotes',
-        related: 'https://kitsu.io/api/edge/anime/13/quotes'
+        self: 'https://kitsu.io/api/edge/anime/2/relationships/quotes',
+        related: 'https://kitsu.io/api/edge/anime/2/quotes'
       }
     },
     episodes: {
       links: {
-        self: 'https://kitsu.io/api/edge/anime/13/relationships/episodes',
-        related: 'https://kitsu.io/api/edge/anime/13/episodes'
+        self: 'https://kitsu.io/api/edge/anime/2/relationships/episodes',
+        related: 'https://kitsu.io/api/edge/anime/2/episodes'
       }
     },
     streamingLinks: {
       links: {
-        self:
-          'https://kitsu.io/api/edge/anime/13/relationships/streaming-links',
-        related: 'https://kitsu.io/api/edge/anime/13/streaming-links'
+        self: 'https://kitsu.io/api/edge/anime/2/relationships/streaming-links',
+        related: 'https://kitsu.io/api/edge/anime/2/streaming-links'
       }
     },
     animeProductions: {
       links: {
         self:
-          'https://kitsu.io/api/edge/anime/13/relationships/anime-productions',
-        related: 'https://kitsu.io/api/edge/anime/13/anime-productions'
+          'https://kitsu.io/api/edge/anime/2/relationships/anime-productions',
+        related: 'https://kitsu.io/api/edge/anime/2/anime-productions'
       }
     },
     animeCharacters: {
       links: {
         self:
-          'https://kitsu.io/api/edge/anime/13/relationships/anime-characters',
-        related: 'https://kitsu.io/api/edge/anime/13/anime-characters'
+          'https://kitsu.io/api/edge/anime/2/relationships/anime-characters',
+        related: 'https://kitsu.io/api/edge/anime/2/anime-characters'
       }
     },
     animeStaff: {
       links: {
-        self: 'https://kitsu.io/api/edge/anime/13/relationships/anime-staff',
-        related: 'https://kitsu.io/api/edge/anime/13/anime-staff'
+        self: 'https://kitsu.io/api/edge/anime/2/relationships/anime-staff',
+        related: 'https://kitsu.io/api/edge/anime/2/anime-staff'
       }
     }
   }

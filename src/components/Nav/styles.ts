@@ -3,17 +3,25 @@ import styled, { css } from 'styled-components'
 interface MenuProps {
   show: boolean
 }
+interface ContainerProps {
+  transparent: boolean
+}
+interface MidiaProps {
+  changeColor: boolean
+}
 
-export const Container = styled.div`
+export const Container = styled.div<ContainerProps>`
   display: flex;
   width: 100%;
-  background-color: transparent;
+  background-color: ${props =>
+    props.transparent ? 'transparent' : props.theme.colors.backgroundColor};
   position: fixed;
   top: 0;
   padding: 12px 20px;
   align-items: center;
   @media (max-width: 480px) {
     flex-direction: column;
+    padding: 12px 0px;
   }
 `
 
@@ -60,16 +68,19 @@ export const NavBar = styled.div`
 export const Menu = styled.ul<MenuProps>`
   display: inline-flex;
   @media (max-width: 480px) {
-    display: inline-block;
-    transition: all 1s;
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    background-color: ${props => props.theme.colors.backgroundColor};
+    transition: all 1s ease-out;
     ${props =>
       props.show
         ? css`
             opacity: 1;
-            height: auto;
+            height: 100vh;
           `
         : css`
-
             opacity: 0;
             height: 0;
             overflow: hidden;
@@ -82,13 +93,24 @@ export const MenuItem = styled.li`
   margin-left: 10px;
   cursor: pointer;
   font-weight: 300;
-  font-size: 14px;
   transition: 0.5s all;
+
   &:hover {
     color: ${props => props.theme.colors.primaryColor};
   }
   @media (max-width: 480px) {
     margin-top: 10px;
+    padding: 10px 0;
+    font-size: 14px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &::after {
+      content: '';
+      width: 90%;
+      padding: 2px 0 20px;
+      border-bottom: 1px solid ${props => props.theme.colors.white};
+    }
   }
 `
 
@@ -103,7 +125,7 @@ export const SearchDiv = styled.div`
   display: flex;
   align-items: center;
   color: ${props => props.theme.colors.white};
-  background-color: ${props => props.theme.colors.backgroundColor};
+  background-color: transparent;
   outline: none;
   border: 1px solid ${props => props.theme.colors.white};
   svg {
@@ -116,12 +138,27 @@ export const SearchDiv = styled.div`
 
 export const SearchInput = styled.input`
   padding: 6px 10px;
-  background-color: ${props => props.theme.colors.backgroundColor};
+  background-color: transparent;
   outline: none;
   border: none;
   color: ${props => props.theme.colors.white};
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: ${props => props.theme.colors.white};
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: ${props => props.theme.colors.white};
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: ${props => props.theme.colors.white};
+  }
 `
-export const SocialMedias = styled.div`
+export const SocialMedias = styled.div<MidiaProps>`
   width: 100px;
   margin-left: 20px;
   display: flex;

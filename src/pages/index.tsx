@@ -1,15 +1,23 @@
 import React from 'react'
 import Head from 'next/head'
-import {Container} from '../styles/pages/Home';
-import Header from '../components/Header';
-const Home: React.FC = () => {
+import { Container } from '../styles/pages/Home'
+import Nav from '../components/Nav'
+import Header from '../components/Header'
+import {TopAnime} from '../services/fakeapi'
 
+const Home: React.FC = () => {
   return (
-    <Container>
+    <Container coverImage={TopAnime.attributes.coverImage}>
       <Head>
-        <title>Home Page</title>
+        <title>Hero Anime</title>
       </Head>
-      <Header />
+      <header>
+        <Nav />
+        <Header anime={TopAnime} />
+      </header>
+      <main>
+
+      </main>
     </Container>
   )
 }

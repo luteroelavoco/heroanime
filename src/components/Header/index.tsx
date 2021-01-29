@@ -1,12 +1,30 @@
-import React from 'react';
-import Nav from './Nav';
-import { Container } from './styles';
+import React from 'react'
+import {
+  Container,
+  SubContainer,
+  SubItem,
+  Title,
+  Description,
+  Button
+} from './styles'
+import { Anime } from '../../services/fakeapiType'
+import { Abbreviate } from '../../utils/anime'
 
-const Header: React.FC = () => {
-  return (
-  <Container>
-    <Nav />
-  </Container>);
+interface props {
+  anime: Anime
 }
 
-export default Header;
+const Header: React.FC<props> = ({ anime }) => {
+  return (
+    <Container>
+      <Title> {anime.attributes.titles.en} </Title>
+      <SubContainer>
+        <SubItem> {anime.attributes.ageRatingGuide} </SubItem>
+      </SubContainer>
+      <Description>{Abbreviate(anime.attributes.description)}</Description>
+      <Button type="button"> See more </Button>
+    </Container>
+  )
+}
+
+export default Header
