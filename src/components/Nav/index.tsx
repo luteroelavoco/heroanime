@@ -24,9 +24,11 @@ import {
 
 const Nav: React.FC = () => {
   const router = useRouter()
+  const { q } = router.query
   const [showMenu, setShowMenu] = useState(false)
   const [transparent, setTransparent] = useState(true)
   const [search, setSearch] = useState('')
+  const [searchControler, setSearchControler] = useState<any>(true)
 
   useEffect(() => {
     const onScroll = e => {
@@ -37,9 +39,14 @@ const Nav: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    if (search.length > 0) router.push('/animes?search='+search)
-    else router.push('/')
+    if(search.length > 0)
+    router.push('/animes?q=' + search)
   }, [search])
+  useEffect(() => {
+    if (!searchControler){
+      router.push('/')
+    }
+  }, [searchControler])
 
   return (
     <Container transparent={transparent}>
@@ -62,7 +69,11 @@ const Nav: React.FC = () => {
             <SearchInput
               type="text"
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={e =>{
+                setSearch(e.target.value)
+                setSearchControler(e.target.value)
+              }
+              }
               placeholder="search here your animes"
             />
           </SearchDiv>
