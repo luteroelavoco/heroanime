@@ -4,7 +4,7 @@ import Nav from '../Nav';
 
 const Layout: React.FC = ({children}) => {
   return (
-    <Container>
+    <Container className="noselect">
       <Nav />
       {children}
     </Container>
