@@ -9,24 +9,28 @@ import {
   Rating,
   Views
 } from './styles'
-import { TopAnime as anime } from '../../services/fakeapi'
+import { Anime } from '../../services/fakeapiType'
 import { FaStar } from 'react-icons/fa'
 import {IoEyeSharp} from 'react-icons/io5'
+import { getEpisodes, getRating } from '../utils/animes'
 
-const CardAnime: React.FC = () => {
+interface props {
+  anime: Anime
+}
+
+const CardAnime: React.FC<props> = ({anime}) => {
   return (
     <Container>
       <Image
-        src={anime.attributes.posterImage.original}
-        alt={anime.attributes.titles.en}
+        images={anime.attributes.posterImage}
       />
       <Content>
-        <Title> {anime.attributes.titles.en} </Title>
-        <SubTitle> {anime.attributes.episodeLength} episodes </SubTitle>
+        <Title> {anime.attributes.canonicalTitle} </Title>
+        <SubTitle> {getEpisodes(anime.attributes.episodeLength)}  </SubTitle>
         <Bottom>
           <Rating>
             <FaStar />
-            {anime.attributes.averageRating}
+            {getRating(anime.attributes.averageRating)}
           </Rating>
           <Views>
             <IoEyeSharp />

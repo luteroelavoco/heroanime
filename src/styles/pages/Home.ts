@@ -26,6 +26,8 @@ interface backgroundprops {
 }
 
 export const Container = styled.div<backgroundprops>`
+  display:flex;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
   background-image: url(${props => props.coverImage.original});
@@ -33,6 +35,7 @@ export const Container = styled.div<backgroundprops>`
   background-size: cover;
   background-position: 50% -150px;
   @media (max-width: 480px){
+    height:100%;
     background-image: url(${props => props.coverImage.original});
     background-size: 800px;
     background-position: 50% 0px;
