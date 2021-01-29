@@ -26,7 +26,7 @@ interface backgroundprops {
 }
 
 export const Container = styled.div<backgroundprops>`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-image: url(${props => props.coverImage.original});
   background-repeat: no-repeat;
