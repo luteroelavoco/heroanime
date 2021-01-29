@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import {Container} from '../styles/pages/Home';
+import Header from '../components/Header';
 const Home: React.FC = () => {
 
   return (
@@ -8,11 +9,7 @@ const Home: React.FC = () => {
       <Head>
         <title>Home Page</title>
       </Head>
-
-      <main>
-        <h1>Brevemente Disponível</h1>
-        <p>@Copyright 2020 Code Pro Inc. All rights reserved.</p>
-      </main>
+      <Header />
     </Container>
   )
 }

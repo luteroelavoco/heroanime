@@ -7,17 +7,4 @@ export const Container = styled.div`
   flex-direction:column;
   justify-content: center;
   align-items: center;
-
-  h1{
-    font-size: 54px;
-    color: ${props => props.theme.colors.primaryColor};
-    margin-top: 40px;
-  }
-
-  p{
-    margin-top: 24px;
-    font-size: 24px;
-    line-height: 42px;
-    text-align: center;
-  }
 `
