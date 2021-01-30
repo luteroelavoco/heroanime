@@ -22,13 +22,13 @@ import {
   FaInstagram,
   FaYoutube
 } from 'react-icons/fa'
+import { useSearch } from '../../context/search'
 
 const Nav: React.FC = () => {
   const router = useRouter()
-  const { q } = router.query
   const [showMenu, setShowMenu] = useState(false)
   const [transparent, setTransparent] = useState(true)
-  const [search, setSearch] = useState('')
+  const {search, setSearch} = useSearch();
   const [searchControler, setSearchControler] = useState<any>(true)
 
   useEffect(() => {
