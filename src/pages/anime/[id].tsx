@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import ReactPlayer from 'react-player/youtube'
 import api from '../../services/api'
 import { getTrendings, getAnimes } from '../index'
@@ -27,6 +27,9 @@ function Anime({ anime, latestAnimes, trendings }) {
   const [youtubeVideoId, setYoutubeVideoId] = useState(
     anime.attributes.youtubeVideoId
   )
+  useEffect(() => {
+    window.scroll(0,0);
+  },[anime])
   return (
     <Container>
       <BgImage images={anime.attributes.coverImage} />

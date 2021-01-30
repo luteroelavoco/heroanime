@@ -11,7 +11,7 @@ export const Container = styled.div`
 `
 
 export const BgImage = styled.div<bgProps>`
-  background-image: url(${props => props.images.original});
+  background-image: url(${props => props.images?.original});
   background-color: ${props => props.theme.colors.background2Color};
   position: absolute;
   top: 0;
