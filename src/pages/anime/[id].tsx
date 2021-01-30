@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import ReactPlayer from 'react-player/youtube'
-import api from '../../services/api'
+import api,{url} from '../../services/api'
 import { getTrendings, getAnimes } from '../index'
 import ListAnimes from '../../components/ListAnimes'
 import ListTrendigAnimes from '../../components/ListTrendigAnimes'
@@ -22,14 +22,30 @@ import {
   PlayerWrapper
 } from '../../styles/pages/Anime'
 import { getRating, getEpisodes, Abbreviate } from '../../utils/anime'
-function Anime({ anime, latestAnimes, trendings }) {
+function Anime({ anime}) {
+
+  const [latestAnimes, setLatestAnimes] = useState([])
+  const [trendings  , setTrendings] = useState([]);
+
   const [playing, setPlaying] = useState(false)
   const [youtubeVideoId, setYoutubeVideoId] = useState(
     anime.attributes.youtubeVideoId
   )
   useEffect(() => {
     window.scroll(0,0);
+    setYoutubeVideoId(anime.attributes.youtubeVideoId)
   },[anime])
+
+  useEffect(() => {
+    async function getInitial(){
+      let latestAnimes = await getAnimes(getCurrenYear(), null)
+      setLatestAnimes(latestAnimes)
+      let trendings = await getTrendings()
+      setTrendings(trendings);
+    }
+    getInitial();
+  },[])
+
   return (
     <Container>
       <BgImage images={anime.attributes.coverImage} />
@@ -81,20 +97,17 @@ function Anime({ anime, latestAnimes, trendings }) {
 }
 
 async function getAnime(id: any) {
-  const { data } = await api.get('/anime/' + id)
-  return data.data
+  const res = await fetch(url + '/anime/' + id)
+  const json = await res.json()
+  return json.data;
 }
 
 export async function getServerSideProps({ params }) {
   const { id } = params
   const anime = await getAnime(id)
-  const trendings = await getTrendings()
-  const latestAnimes = await getAnimes(getCurrenYear(), null)
   return {
     props: {
       anime,
-      latestAnimes,
-      trendings
     }
   }
 }
