@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import {
   Container,
   SubContainer,
@@ -15,6 +16,11 @@ interface props {
 }
 
 const Header: React.FC<props> = ({ anime }) => {
+  const router = useRouter()
+
+  function handleNextPage() {
+    router.push(`/anime/${anime.id}`)
+  }
   return (
     <Container>
       <Title> {anime.attributes.titles.en} </Title>
@@ -22,7 +28,7 @@ const Header: React.FC<props> = ({ anime }) => {
         <SubItem> {anime.attributes.ageRatingGuide} </SubItem>
       </SubContainer>
       <Description>{Abbreviate(anime.attributes.description)}</Description>
-      <Button className="button" type="button"> See more </Button>
+      <Button className="button" type="button" onClick={handleNextPage}> See more </Button>
     </Container>
   )
 }

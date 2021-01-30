@@ -75,7 +75,7 @@ function Anime({ anime, latestAnimes, trendings }) {
         )}
       </Content>
       <ListTrendigAnimes trendings={trendings} />
-      <ListAnimes title="Latest animes" animes={latestAnimes} />
+      <ListAnimes title="This year" animes={latestAnimes} />
     </Container>
   )
 }

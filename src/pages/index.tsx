@@ -15,8 +15,8 @@ function Home({ latestAnimes, mdSchoolAnimes, samuraiAnimes, trendings }) {
         <title>Hero Anime</title>
       </Head>
       <Header anime={TopAnime} />
-      <ListAnimes title="Latest animes" animes={latestAnimes} />
-       <ListTrendigAnimes trendings={trendings} />
+      <ListTrendigAnimes trendings={trendings} />
+      <ListAnimes title="This year" animes={latestAnimes} />
       <ListAnimes title="Middle school" animes={mdSchoolAnimes} />
       <ListAnimes title="Samurai" animes={samuraiAnimes} />
     </Container>

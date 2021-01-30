@@ -34,7 +34,7 @@ const CardTrending: React.FC<props> = ({ anime }) => {
           Available on {anime.attributes.showType}
         </SubTitle>
         <Desc> Synopsis : {Abbreviate(anime.attributes.synopsis)}</Desc>
-        <SeeMore href={anime.links.self}> See more </SeeMore>
+        <SeeMore  onClick={() => handleNextPage()}> See more </SeeMore>
       </Content>
     </Container>
   )

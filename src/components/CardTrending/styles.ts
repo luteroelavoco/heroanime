@@ -102,6 +102,7 @@ export const SeeMore = styled.a`
   width: 60%;
   position: absolute;
   bottom: 0;
+  cursor: pointer;
   text-decoration: none;
   padding: 6px 8px;
   margin-top: 10px;
