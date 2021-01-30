@@ -23,7 +23,7 @@ function Home({ latestAnimes, mdSchoolAnimes, samuraiAnimes, trendings }) {
   )
 }
 
-async function getAnimes(seasonYear: any, slug: string) {
+export async function getAnimes(seasonYear: any, slug: string) {
   const { data } = await api.get('anime', {
     params: {
       'filter[seasonYear]': seasonYear,
@@ -32,7 +32,7 @@ async function getAnimes(seasonYear: any, slug: string) {
   })
   return data.data
 }
-async function getTrendings() {
+export async function getTrendings() {
   const { data } = await api.get('/trending/anime')
   return data.data
 }

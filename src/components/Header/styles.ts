@@ -52,16 +52,4 @@ export const Description = styled.p`
 export const Button = styled.button`
   width: 150px;
   margin-top: 20px;
-  padding: 10px;
-  border: 2px solid ${props => props.theme.colors.buttonColor};
-  border-radius: 3px;
-  cursor: pointer;
-  background: ${props => props.theme.colors.buttonColor};
-  color: ${props => props.theme.colors.buttonTextColor};
-  transition: 0.5s all;
-  &:hover {
-    background: ${props => props.theme.colors.buttonTextColor};
-    border-color: ${props => props.theme.colors.buttonTextColor};
-    color: ${props => props.theme.colors.buttonColor};
-  }
 `

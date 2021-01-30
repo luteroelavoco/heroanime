@@ -12,7 +12,7 @@ import {
 import { Anime } from '../../services/fakeapiType'
 import { FaStar } from 'react-icons/fa'
 import {IoEyeSharp} from 'react-icons/io5'
-import { getEpisodes, getRating } from '../utils/animes'
+import {getRating ,getEpisodes} from '../../utils/anime'
 
 interface props {
   anime: Anime

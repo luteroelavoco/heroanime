@@ -22,7 +22,7 @@ const Header: React.FC<props> = ({ anime }) => {
         <SubItem> {anime.attributes.ageRatingGuide} </SubItem>
       </SubContainer>
       <Description>{Abbreviate(anime.attributes.description)}</Description>
-      <Button type="button"> See more </Button>
+      <Button className="button" type="button"> See more </Button>
     </Container>
   )
 }

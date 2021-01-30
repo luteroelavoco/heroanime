@@ -21,14 +21,5 @@ export var settingsListAnime = {
   ]
 }
 
-export function getEpisodes(epis: any){
-  if(epis)
-   return epis +" episodes"
-  return "no episodes";
-}
 
-export function getRating(epis: any){
-  if(epis)
-   return epis
-  return "0.0";
-}
+
