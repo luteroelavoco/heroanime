@@ -9,6 +9,15 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 10px;
+  @media (max-width: 650px){
+    width: 180px;
+  }
+  @media (max-width: 480px){
+    width: 150px;
+  }
+  @media (max-width: 340px){
+    width: 90%;
+  }
 `
 export const Image = styled.div<propsImage>`
   width: 100%;
@@ -24,10 +33,13 @@ export const Image = styled.div<propsImage>`
   @media (max-width: 768px) {
     background-image: url(${props => props.images.small});
   }
-
-  @media (max-width: 380px) {
-    height: 280px;
+  @media (max-width: 480px){
+    height: 250px;
   }
+  @media (max-width: 345px){
+    height: 300px;
+  }
+
   @media (max-width: 300px) {
     background-image: url(${props => props.images.tiny});
   }
@@ -38,6 +50,9 @@ export const Content = styled.div`
   position: relative;
   flex-direction: column;
   height: 160px;
+  @media (max-width: 645px){
+    height: auto;
+  }
 `
 
 export const Title = styled.h1`
@@ -99,5 +114,8 @@ export const SeeMore = styled.a`
   &:hover {
     background-color: ${props => props.theme.colors.buttonTextColor};
     color: ${props => props.theme.colors.buttonColor};
+  }
+  @media (max-width: 645px){
+    position: relative;
   }
 `

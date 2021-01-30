@@ -3,36 +3,20 @@ import Slider from "react-slick";
 import { Carrousel, Container, Title } from './styles';
 import {settingsListAnime as settings} from '../utils/animes'
 import CardAnime from '../CardAnime';
-import api from '../../services/api';
 
 interface props {
   title: string,
-  slug?: string,
-  seasonYear?: number,
+  animes: any,
 }
 
-const ListAnimes: React.FC<props> = ({title, slug, seasonYear}) => {
-
-  const [animes, setAnimes] = useState([]);
-  useEffect(()=>{
-    async function getAnimes(){
-      const {data} = await api.get('/anime', {
-        params: {
-          "filter[seasonYear]" : seasonYear,
-          "filter[categories]" : slug,
-        }
-      });
-      setAnimes(data.data);
-    }
-    getAnimes();
-  },[])
+const ListAnimes: React.FC<props> = ({title, animes}) => {
 
   return (
     <Container>
       <Title>{title}</Title>
       <Carrousel>
         <Slider {...settings}>
-          {animes.map(anime => (
+          {animes?.map(anime => (
              <CardAnime key={anime.id} anime={anime} />
           ))}
 
@@ -42,5 +26,8 @@ const ListAnimes: React.FC<props> = ({title, slug, seasonYear}) => {
     </Container>
   );
 }
+
+
+
 
 export default ListAnimes;

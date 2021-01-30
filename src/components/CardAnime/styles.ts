@@ -14,32 +14,31 @@ export const Container = styled.div`
   box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.28);
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  @media (max-width: 380px) {
-    width: 200px;
-    height: 380px;
+  @media (max-width: 480px) {
+    width: 94%;
+    height: 480px;
   }
 `
 
 export const Image = styled.div<propsImage>`
   width: 100%;
   height: 300px;
-  background-image: url(${props => props.images.original});
+  background-image: url(${props => props.images?.original});
   background-size: cover;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   cursor: pointer;
   @media (max-width: 991px) {
-    background-image: url(${props => props.images.medium});
+    background-image: url(${props => props.images?.medium});
   }
   @media (max-width: 768px) {
-    background-image: url(${props => props.images.small});
+    background-image: url(${props => props.images?.small});
   }
-
-  @media (max-width: 380px) {
-    height: 280px;
+  @media (max-width: 480px) {
+    height: 380px;
   }
   @media (max-width: 300px) {
-    background-image: url(${props => props.images.tiny});
+    background-image: url(${props => props.images?.tiny});
   }
 `
 export const Content = styled.div`
@@ -68,7 +67,7 @@ export const Title = styled.h1`
     color: ${props => props.theme.colors.primaryColor};
     font-weight: bold;
   }
-  
+
 `
 export const SubTitle = styled.h3`
   color: ${props => props.theme.colors.gray};
