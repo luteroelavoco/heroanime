@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 40px auto 0 auto; ;
+  margin: 40px auto 0 auto;
 `
 
 export const Title = styled.h1`
@@ -24,7 +24,8 @@ export const Carrousel = styled.div`
   max-width: 92vw;
   margin: 10px auto 0;
   @media (max-width: 580px){
-    padding:0px 0px 0px 10px;
+    padding:0px 10px 0px 10px;
+    max-width: 89vw;
   }
   @media (max-width: 320px){
     max-width: 85vw;

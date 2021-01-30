@@ -28,12 +28,7 @@ export const Image = styled.div<propsImage>`
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   cursor: pointer;
-  @media (max-width: 991px) {
-    background-image: url(${props => props.images?.medium});
-  }
-  @media (max-width: 768px) {
-    background-image: url(${props => props.images?.small});
-  }
+
   @media (max-width: 480px) {
     height: 380px;
   }

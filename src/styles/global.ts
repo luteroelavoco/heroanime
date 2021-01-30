@@ -30,4 +30,5 @@ export default createGlobalStyle`
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
+
 `

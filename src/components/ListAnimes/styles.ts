@@ -26,6 +26,7 @@ export const Carrousel = styled.div`
   margin: 10px auto 0;
   @media (max-width: 580px){
     padding:0px 0px 0px 10px;
+    max-width: 87vw;
   }
   @media (max-width: 320px){
     max-width: 85vw;

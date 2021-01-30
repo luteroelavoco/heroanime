@@ -29,11 +29,11 @@ export const Container = styled.div<backgroundprops>`
   display:flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-image: url(${props => props.coverImage.original});
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% -150px;
+  background-size: 100vw 100vh;
+  background-position: 50% -100px;
   @media (max-width: 480px){
     height:100%;
     background-image: url(${props => props.coverImage.original});
