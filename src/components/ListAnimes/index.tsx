@@ -18,7 +18,8 @@ const ListAnimes: React.FC<props> = ({title, slug, seasonYear}) => {
     async function getAnimes(){
       const {data} = await api.get('/anime', {
         params: {
-          "filter[seasonYear]" : seasonYear
+          "filter[seasonYear]" : seasonYear,
+          "filter[categories]" : slug,
         }
       });
       setAnimes(data.data);

@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import {TopAnime} from '../services/fakeapi'
 import ListAnimes from '../components/ListAnimes'
 import { getCurrenYear } from '../components/utils/date'
+import ListTrendigAnimes from '../components/ListTrendigAnimes'
 
 const Home: React.FC = () => {
 
@@ -15,7 +16,9 @@ const Home: React.FC = () => {
       </Head>
       <Header anime={TopAnime} />
       <ListAnimes title="Latest animes" seasonYear={getCurrenYear()} />
-      
+      <ListTrendigAnimes />
+      <ListAnimes title="Middle school" slug="middle-school" />
+      <ListAnimes title="Vampire" slug="vampire" />
     </Container>
   )
 }

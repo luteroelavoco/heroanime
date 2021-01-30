@@ -23,9 +23,7 @@ export const Container = styled.div<ContainerProps>`
     flex-direction: column;
     padding: 12px 0px;
   }
-  @media (max-width: 480px) {
-    z-index: 100;
-  }
+  z-index: 100;
 `
 
 export const MenuBar = styled.div`

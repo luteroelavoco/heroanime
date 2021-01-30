@@ -68,9 +68,7 @@ export const Title = styled.h1`
     color: ${props => props.theme.colors.primaryColor};
     font-weight: bold;
   }
-  @media (max-width: 380px) {
-    font-size: 0.8rem;
-  }
+  
 `
 export const SubTitle = styled.h3`
   color: ${props => props.theme.colors.gray};
