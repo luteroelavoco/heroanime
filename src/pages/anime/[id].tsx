@@ -38,10 +38,8 @@ function Anime({ anime}) {
 
   useEffect(() => {
     async function getInitial(){
-      let latestAnimes = await getAnimes(getCurrenYear(), null)
-      setLatestAnimes(latestAnimes)
-      let trendings = await getTrendings()
-      setTrendings(trendings);
+      setLatestAnimes(await getAnimes(getCurrenYear(), null))
+      setTrendings(await getTrendings());
     }
     getInitial();
   },[])
