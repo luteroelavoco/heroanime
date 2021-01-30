@@ -32,11 +32,52 @@ export const Content = styled.div`
   position: relative;
   padding-top: 100px;
   justify-content: center;
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+  }
+  @media (max-width: 480px) {
+    padding-top: 80px;
+  }
+`
+
+export const CardAnime = styled.div`
+  display: flex;
+  position: relative;
+  justify-content: center;
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: 0 auto 20px;
+  }
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+`
+
+export const ImgContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  h1 {
+    display: none;
+  }
+  @media (max-width: 480px) {
+    h1 {
+      display: block;
+    }
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
 `
 
 export const Image = styled.img`
   width: 250px;
   height: 350px;
+  @media (max-width: 480px) {
+    width: 90%;
+    max-width: 300px;
+    height: 380px;
+  }
 `
 
 export const Information = styled.div`
@@ -45,6 +86,11 @@ export const Information = styled.div`
   margin-left: 20px;
   width: 90%;
   max-width: 400px;
+  @media (max-width: 480px) {
+    h1 {
+      display: none;
+    }
+  }
 `
 
 export const Title = styled.h1`
@@ -92,4 +138,9 @@ export const PlayerWrapper = styled.div`
   height: 350px;
   max-width: 400px;
   border-radius: 4px;
+  @media (max-width: 1100px) {
+
+    max-width: 675px;
+    margin: 0 auto;
+  }
 `

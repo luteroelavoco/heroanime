@@ -10,7 +10,9 @@ import {
   BgImage,
   Container,
   Content,
+  ImgContainer,
   Image,
+  CardAnime,
   Information,
   Title,
   SubTitle,
@@ -29,28 +31,33 @@ function Anime({ anime, latestAnimes, trendings }) {
     <Container>
       <BgImage images={anime.attributes.coverImage} />
       <Content>
-        <Image
-          src={anime.attributes.posterImage.original}
-          alt={anime.attributes.canonicalTitle}
-        />
-        <Information>
-          <Title>{anime.attributes.canonicalTitle} </Title>
-          <SubTitle>Available on {anime.attributes.subtype} </SubTitle>
-          <SubTitle> {getEpisodes(anime.attributes.episodeLength)} </SubTitle>
-          <SubTitle>{anime.attributes.ageRatingGuide} </SubTitle>
-          <AverageRating>
-            <FaStar />
-            {getRating(anime.attributes.averageRating)}
-          </AverageRating>
-          {youtubeVideoId && (
-            <Button className="button" onClick={() => setPlaying(!playing)}>
-              {playing ? 'Pause trailer' : 'Play trailer'}
-            </Button>
-          )}
-          <Description>
-            {Abbreviate(anime.attributes.description, 100)}
-          </Description>
-        </Information>
+        <CardAnime>
+          <ImgContainer>
+            <Title>{anime.attributes.canonicalTitle} </Title>
+            <Image
+              src={anime.attributes.posterImage.original}
+              alt={anime.attributes.canonicalTitle}
+            />
+          </ImgContainer>
+          <Information>
+            <Title>{anime.attributes.canonicalTitle} </Title>
+            <SubTitle>Available on {anime.attributes.subtype} </SubTitle>
+            <SubTitle> {getEpisodes(anime.attributes.episodeLength)} </SubTitle>
+            <SubTitle>{anime.attributes.ageRatingGuide} </SubTitle>
+            <AverageRating>
+              <FaStar />
+              {getRating(anime.attributes.averageRating)}
+            </AverageRating>
+            {youtubeVideoId && (
+              <Button className="button" onClick={() => setPlaying(!playing)}>
+                {playing ? 'Pause trailer' : 'Play trailer'}
+              </Button>
+            )}
+            <Description>
+              {Abbreviate(anime.attributes.description, 100)}
+            </Description>
+          </Information>
+        </CardAnime>
         {youtubeVideoId && (
           <PlayerWrapper>
             <ReactPlayer
