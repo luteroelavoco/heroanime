@@ -48,8 +48,6 @@ export default class MyDocument extends Document {
           ></link>
         </Head>
         <body>
-          <Main />
-          <NextScript />
           <link
             rel="stylesheet"
             type="text/css"
@@ -61,6 +59,8 @@ export default class MyDocument extends Document {
             type="text/css"
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
           />
+          <Main />
+          <NextScript />
         </body>
       </Html>
     )

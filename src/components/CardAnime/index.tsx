@@ -27,7 +27,11 @@ const CardAnime: React.FC<props> = ({ anime }) => {
   }
   return (
     <Container>
-      <Image onClick={handleNextPage} images={anime.attributes.posterImage} />
+      <Image
+        onClick={handleNextPage}
+        src={anime.attributes.posterImage.original}
+        alt={anime.attributes.canonicalTitle}
+      />
       <Content>
         <Title onClick={handleNextPage}>
           {anime.attributes.canonicalTitle}
