@@ -4,15 +4,15 @@ export const Container = styled.div`
   display: grid;
   width: 100%;
   grid-template-columns: repeat(7, 1fr);
-  max-width: 300px;
+  max-width: 250px;
   margin: 40px auto 0px;
 `
 
 export const Page = styled.h1`
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   font-size:14px;
-  padding-top: 16px;
+  padding-top: 12px;
   text-align: center;
   margin: 0 3px;
   border: 2px solid ${props => props.theme.colors.buttonColor};

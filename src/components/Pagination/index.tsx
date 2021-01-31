@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import pages from '../../pages'
+import { useRouter } from 'next/router'
 import {
   canGoBack,
   canGoForward,
@@ -7,7 +7,7 @@ import {
   getPagesNumber,
   goBack,
   goForward
-} from '../utils/pagination'
+} from './helpers'
 import { Container, Page } from './styles'
 
 interface props {
@@ -16,6 +16,8 @@ interface props {
 }
 
 const Pagination: React.FC<props> = ({ count, limit }) => {
+  const router = useRouter()
+  const { q  } = router.query
   const pagelimits = 5
   const [pages, setPages] = useState([])
   const [current, setCurrent] = useState(0)
@@ -23,29 +25,46 @@ const Pagination: React.FC<props> = ({ count, limit }) => {
 
   useEffect(() => {
     setPages(getPagesNumber(count, limit))
+    setCurrent(0)
   }, [count])
 
-  return (
-    <Container>
-      <Page className={canGoBack(start, pagelimits) ? 'active arrow' : 'arrow'} onClick={() => goBack(start, pagelimits, setStart)}>
-        {'<'}
-      </Page>
-      {pages.map((item, index) => {
-        if (canShow(index, start, pagelimits))
-          return <Page className={index == current && 'active'}> {item} </Page>
-      })}
-      <Page
-        className={
-          canGoForward(start, pagelimits, pages.length)
-            ? 'active arrow'
-            : 'arrow'
-        }
-        onClick={() => goForward(start, pagelimits, pages.length, setStart)}
-      >
-        {'>'}
-      </Page>
-    </Container>
-  )
+  function handlePage(index: number) {
+    setCurrent(index)
+    router.push(`/animes?${q ? `q=${q}&`:''}offset=${index * limit}`)
+  }
+  if (pages.length > 1)
+    return (
+      <Container>
+        <Page
+          className={canGoBack(start, pagelimits) ? 'active arrow' : 'arrow'}
+          onClick={() => goBack(start, pagelimits, setStart)}
+        >
+          {'<'}
+        </Page>
+        {pages.map((item, index) => {
+          if (canShow(index, start, pagelimits))
+            return (
+              <Page
+                className={index == current && 'active'}
+                onClick={() => handlePage(index)}
+              >
+                {item}
+              </Page>
+            )
+        })}
+        <Page
+          className={
+            canGoForward(start, pagelimits, pages.length)
+              ? 'active arrow'
+              : 'arrow'
+          }
+          onClick={() => goForward(start, pagelimits, pages.length, setStart)}
+        >
+          {'>'}
+        </Page>
+      </Container>
+    )
+  return <></>
 }
 
 export default Pagination

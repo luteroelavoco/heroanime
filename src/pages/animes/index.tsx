@@ -4,7 +4,7 @@ import Pagination from '../../components/Pagination';
 import api from '../../services/api';
 import { Container, Title,ListAnimes } from '../../styles/pages/Animes';
 
-const limit = 10;
+const limit = 20;
 function Animes ({ animes, count }){
 
   return (
@@ -15,7 +15,7 @@ function Animes ({ animes, count }){
           <CardAnime key={anime.id} anime={anime} />
         )))}
       </ListAnimes>
-      <Pagination count={count} limit={limit} />
+      {animes.length > 0 && <Pagination count={count} limit={limit} />}
     </Container>
   );
 }
