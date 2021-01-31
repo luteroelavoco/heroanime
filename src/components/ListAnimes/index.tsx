@@ -12,7 +12,7 @@ interface props {
 const ListAnimes: React.FC<props> = ({title, animes}) => {
 
   return (
-    <Container>
+    <Container className={title.toLocaleLowerCase().replace(' ','_')}>
       <Title>{title}</Title>
       <Carrousel>
         <Slider {...settings}>

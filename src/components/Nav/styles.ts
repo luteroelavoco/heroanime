@@ -89,6 +89,7 @@ export const Menu = styled.ul`
     transition: all 1s ease-out;
   }
 
+
 `
 
 export const MenuItem = styled.li`
@@ -98,7 +99,7 @@ export const MenuItem = styled.li`
   font-weight: 300;
   transition: 0.5s all;
 
-  &:hover {
+  &:hover , &.active, .active{
     color: ${props => props.theme.colors.primaryColor};
   }
   @media (max-width: 768px) {

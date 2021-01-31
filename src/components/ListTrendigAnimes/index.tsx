@@ -11,7 +11,7 @@ interface props{
 const ListTrendigAnimes: React.FC<props> = ({trendings}) => {
 
   return (
-    <Container>
+    <Container className="trending">
       <Title>Trending</Title>
       <Carrousel>
         <Slider {...settings}>

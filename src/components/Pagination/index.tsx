@@ -32,6 +32,7 @@ const Pagination: React.FC<props> = ({ count, limit }) => {
   function handlePage(index: number) {
     setCurrent(index)
     router.push(`/animes?${q ? `q=${q}&`:''}offset=${index * limit}`)
+    window.scrollTo(0, 0);
   }
   if (pages.length > 1)
     return (
@@ -46,6 +47,7 @@ const Pagination: React.FC<props> = ({ count, limit }) => {
           if (canShow(index, start, pagelimits))
             return (
               <Page
+                key={item}
                 className={index == current && 'active'}
                 onClick={() => handlePage(index)}
               >
