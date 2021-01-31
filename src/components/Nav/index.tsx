@@ -40,10 +40,13 @@ const Nav: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    if (search.length > 0) router.push('/animes?q=' + search)
+    if (search.length > 0){
+      router.push('/animes?q=' + search)
+    }
   }, [search])
+
   useEffect(() => {
-    if (!searchControler) {
+    if (searchControler == '') {
       router.push('/')
     }
   }, [searchControler])
