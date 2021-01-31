@@ -1,9 +1,5 @@
 import styled from 'styled-components'
 
-interface propsImage {
-  images: any
-}
-
 export const Container = styled.div`
   width: 250px;
   display: flex;
@@ -19,20 +15,14 @@ export const Container = styled.div`
     width: 90%;
   }
 `
-export const Image = styled.div<propsImage>`
+export const Image = styled.img`
   width: 100%;
   height: 300px;
-  background-image: url(${props => props.images.original});
   background-size: cover;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  object-fit:cover;
   cursor: pointer;
-  @media (max-width: 991px) {
-    background-image: url(${props => props.images.medium});
-  }
-  @media (max-width: 768px) {
-    background-image: url(${props => props.images.small});
-  }
   @media (max-width: 480px){
     height: 250px;
   }
@@ -40,9 +30,6 @@ export const Image = styled.div<propsImage>`
     height: 300px;
   }
 
-  @media (max-width: 300px) {
-    background-image: url(${props => props.images.tiny});
-  }
 `
 
 export const Content = styled.div`

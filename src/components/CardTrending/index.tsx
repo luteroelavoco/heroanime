@@ -23,7 +23,7 @@ const CardTrending: React.FC<props> = ({ anime }) => {
   }
   return (
     <Container>
-      <Image images={anime.attributes.posterImage} />
+      <Image src={anime.attributes.posterImage.original} alt={anime.attributes.canonicalTitle} />
       <Content>
         <Title onClick={() => handleNextPage()}>
           {' '}

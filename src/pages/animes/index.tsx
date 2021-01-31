@@ -1,4 +1,5 @@
-import React, { useState, useEffect}from 'react';
+import React from 'react';
+import Head from 'next/head'
 import CardAnime from '../../components/CardAnime';
 import Pagination from '../../components/Pagination';
 import api from '../../services/api';
@@ -9,6 +10,9 @@ function Animes ({ animes, count }){
 
   return (
     <Container>
+      <Head>
+        <title>Hero anime : more animes</title>
+      </Head>
       <Title> {animes.length > 0 ? "Find here yours animes" : "Sorry! No anime found"}</Title>
       <ListAnimes>
         {animes.map((anime => (
