@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { Link as LinkScroll, animateScroll as scroll } from 'react-scroll'
 import {
   Container,
   Logo,
@@ -23,33 +24,33 @@ import {
   FaYoutube
 } from 'react-icons/fa'
 import { useSearch } from '../../context/search'
+import { hasScrolled, initialMenu, routerChanging } from './helpers'
 
 const Nav: React.FC = () => {
   const router = useRouter()
   const [showMenu, setShowMenu] = useState(false)
   const [transparent, setTransparent] = useState(true)
-  const {search, setSearch} = useSearch();
-  const [searchControler, setSearchControler] = useState<any>(true)
+  const [canGoBack, setcanGoBack] = useState<any>(true)
+  const [activeMoreAnimes, setActiveMoreAnimes] = useState(false)
+  const { search, setSearch } = useSearch()
+  const [menu, setMenu] = useState(initialMenu)
 
   useEffect(() => {
-    const onScroll = e => {
-      if (window.scrollY > 0) setTransparent(false)
-      else setTransparent(true)
-    }
-    window.addEventListener('scroll', onScroll)
+    routerChanging(router,setMenu,setActiveMoreAnimes,setSearch)
+    hasScrolled(setTransparent)
   }, [])
 
   useEffect(() => {
-    if (search.length > 0){
+    if (search.length > 0) {
       router.push('/animes?q=' + search)
     }
   }, [search])
 
   useEffect(() => {
-    if (searchControler == '') {
+    if (canGoBack == '') {
       router.push('/')
     }
-  }, [searchControler])
+  }, [canGoBack])
 
   return (
     <Container transparent={transparent}>
@@ -57,17 +58,38 @@ const Nav: React.FC = () => {
         <Link href="/">
           <Logo> HeroAnime</Logo>
         </Link>
-
         <MenuTogle onClick={() => setShowMenu(!showMenu)}>
           <FaBars />
         </MenuTogle>
       </MenuBar>
       <NavBar show={showMenu}>
         <Menu>
-          <MenuItem> Start</MenuItem>
-          <MenuItem> Recents</MenuItem>
-          <MenuItem> Trending</MenuItem>
-          <MenuItem> Categories</MenuItem>
+          {menu.map(item => (
+            <MenuItem>
+              <LinkScroll
+                key={item.slug}
+                activeClass="active"
+                onSetActive={()=> setShowMenu(false)}
+                to={item.slug}
+                spy={true}
+                offset={-80}
+                smooth={true}
+                duration={500}
+              >
+                {item.name}
+              </LinkScroll>
+            </MenuItem>
+          ))}
+
+          <Link href="/animes">
+            <MenuItem
+            className={activeMoreAnimes && 'active'}
+            onClick={()=> setShowMenu(false)}
+            >
+              {' '}
+              more animes
+            </MenuItem>
+          </Link>
         </Menu>
         <MenuSettings>
           <SearchDiv>
@@ -77,7 +99,7 @@ const Nav: React.FC = () => {
               value={search}
               onChange={e => {
                 setSearch(e.target.value)
-                setSearchControler(e.target.value)
+                setcanGoBack(e.target.value)
               }}
               placeholder="search here your animes"
             />
