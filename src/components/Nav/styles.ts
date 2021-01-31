@@ -23,6 +23,7 @@ export const Container = styled.div<ContainerProps>`
     flex-direction: column;
     padding: 12px 0px;
   }
+  z-index: 100;
 `
 
 export const MenuBar = styled.div`
@@ -87,6 +88,7 @@ export const Menu = styled.ul`
     width: 100vw;
     transition: all 1s ease-out;
   }
+
 `
 
 export const MenuItem = styled.li`

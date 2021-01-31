@@ -8,6 +8,12 @@ export default createGlobalStyle`
     -webkit-tap-highlight-color: transparent;
     outline: none;
   }
+  body, main, html {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+  }
   body{
     background: ${props => props.theme.colors.backgroundColor};
     font: 400 16px Roboto, sans-serif;
@@ -24,4 +30,5 @@ export default createGlobalStyle`
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
+
 `

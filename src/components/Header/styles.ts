@@ -2,10 +2,9 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 `
 
@@ -16,7 +15,11 @@ export const Title = styled.strong`
   font-weight: 300;
   color: ${props => props.theme.colors.white};
   letter-spacing: 1px;
-  margin-top: 300px;
+  margin-top: 330px;
+  @media (max-width: 380px){
+    font-size: 2rem;
+    margin-top: 280px;
+  }
 `
 
 export const SubContainer = styled.div`
@@ -30,6 +33,9 @@ export const SubItem = styled.span`
   margin-top: 10px;
   font-size: 1rem;
   color: ${props => props.theme.colors.textColor};
+  @media (max-width: 380px){
+    font-size: 0.8rem;
+  }
 `
 
 export const Description = styled.p`
@@ -37,9 +43,11 @@ export const Description = styled.p`
   margin-top: 20px;
   text-align: center;
   max-width: 800px;
-  font-size: 0.5rem;
   font-size: 1.2rem;
   color: ${props => props.theme.colors.gray};
+  @media (max-width: 380px){
+    font-size: 1rem;
+  }
 `
 export const Button = styled.button`
   width: 150px;
