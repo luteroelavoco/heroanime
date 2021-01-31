@@ -1,18 +1,17 @@
 import React from 'react'
 import Head from 'next/head'
-import {Container} from '../styles/pages/Home';
+import { Container } from '../styles/pages/Home'
+import Nav from '../components/Nav'
+import Header from '../components/Header'
+import {TopAnime} from '../services/fakeapi'
+
 const Home: React.FC = () => {
-
   return (
-    <Container>
+    <Container coverImage={TopAnime.attributes.coverImage}>
       <Head>
-        <title>Home Page</title>
+        <title>Hero Anime</title>
       </Head>
-
-      <main>
-        <h1>Brevemente Disponível</h1>
-        <p>@Copyright 2020 Code Pro Inc. All rights reserved.</p>
-      </main>
+      <Header anime={TopAnime} />
     </Container>
   )
 }
