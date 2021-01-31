@@ -19,7 +19,7 @@ export const Container = styled.div<ContainerProps>`
   top: 0;
   padding: 12px 20px;
   align-items: center;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     flex-direction: column;
     padding: 12px 0px;
   }
@@ -29,7 +29,7 @@ export const Container = styled.div<ContainerProps>`
 export const MenuBar = styled.div`
   display: flex;
   align-items: center;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     width: 100%;
     justify-content: space-between;
     padding: 0 20px;
@@ -50,7 +50,7 @@ export const MenuTogle = styled.div`
   &:hover {
     color: ${props => props.theme.colors.primaryColor};
   }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     display: block;
   }
 `
@@ -61,7 +61,7 @@ export const NavBar = styled.div<MenuProps>`
   margin-left: 20px;
   align-items: center;
   justify-content: space-between;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     flex-direction: column;
     justify-content:flex-start;
     width: 100%;
@@ -83,7 +83,7 @@ export const NavBar = styled.div<MenuProps>`
 
 export const Menu = styled.ul`
   display: inline-flex;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     display: inline-block;
     width: 100vw;
     transition: all 1s ease-out;
@@ -102,7 +102,7 @@ export const MenuItem = styled.li`
   &:hover , &.active, .active{
     color: ${props => props.theme.colors.primaryColor};
   }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     margin-top: 10px;
     padding: 10px 0;
     font-size: 14px;
@@ -120,7 +120,7 @@ export const MenuItem = styled.li`
 
 export const MenuSettings = styled.div`
   display: flex;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
    width: 100%;
    justify-content: space-between;
    margin-left: 20px;

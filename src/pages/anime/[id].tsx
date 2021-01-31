@@ -1,6 +1,7 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import Head from 'next/head'
 import ReactPlayer from 'react-player/youtube'
-import api,{url} from '../../services/api'
+import { url } from '../../services/api'
 import { getTrendings, getAnimes } from '../index'
 import ListAnimes from '../../components/ListAnimes'
 import ListTrendigAnimes from '../../components/ListTrendigAnimes'
@@ -22,30 +23,32 @@ import {
   PlayerWrapper
 } from '../../styles/pages/Anime'
 import { getRating, getEpisodes, Abbreviate } from '../../utils/anime'
-function Anime({ anime}) {
-
+function Anime({ anime }) {
   const [latestAnimes, setLatestAnimes] = useState([])
-  const [trendings  , setTrendings] = useState([]);
+  const [trendings, setTrendings] = useState([])
 
   const [playing, setPlaying] = useState(false)
   const [youtubeVideoId, setYoutubeVideoId] = useState(
     anime.attributes.youtubeVideoId
   )
   useEffect(() => {
-    window.scroll(0,0);
+    window.scroll(0, 0)
     setYoutubeVideoId(anime.attributes.youtubeVideoId)
-  },[anime])
+  }, [anime])
 
   useEffect(() => {
-    async function getInitial(){
+    async function getInitial() {
       setLatestAnimes(await getAnimes(getCurrenYear(), null))
-      setTrendings(await getTrendings());
+      setTrendings(await getTrendings())
     }
-    getInitial();
-  },[])
+    getInitial()
+  }, [])
 
   return (
     <Container>
+      <Head>
+        <title>Hero anime : {anime.attributes.canonicalTitle}</title>
+      </Head>
       <BgImage images={anime.attributes.coverImage} />
       <Content>
         <CardAnime>
@@ -97,7 +100,7 @@ function Anime({ anime}) {
 async function getAnime(id: any) {
   const res = await fetch(url + '/anime/' + id)
   const json = await res.json()
-  return json.data;
+  return json.data
 }
 
 export async function getServerSideProps({ params }) {
@@ -105,7 +108,7 @@ export async function getServerSideProps({ params }) {
   const anime = await getAnime(id)
   return {
     props: {
-      anime,
+      anime
     }
   }
 }
