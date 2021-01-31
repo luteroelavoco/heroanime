@@ -33,7 +33,7 @@ export const Container = styled.div<backgroundprops>`
   background-image: url(${props => props.coverImage.original});
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
-  background-position: 50% -100px;
+  background-position: 50% -150px;
   @media (max-width: 480px){
     height:100%;
     background-image: url(${props => props.coverImage.original});

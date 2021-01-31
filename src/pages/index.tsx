@@ -37,10 +37,10 @@ export async function getTrendings() {
   return data.data
 }
 export async function getStaticProps() {
-  const latestAnimes = await getAnimes(getCurrenYear(), null)
-  const mdSchoolAnimes = await getAnimes(null, 'middle-school')
-  const samuraiAnimes = await getAnimes(null, 'samurai')
-  const trendings = await getTrendings();
+  const latestAnimes =  []//await getAnimes(getCurrenYear(), null)
+  const mdSchoolAnimes = [] //await getAnimes(null, 'middle-school')
+  const samuraiAnimes = [] // await getAnimes(null, 'samurai')
+  const trendings = [] // await getTrendings();
   return {
     props: {
       latestAnimes,
