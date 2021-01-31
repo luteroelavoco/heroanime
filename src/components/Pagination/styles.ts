@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: grid;
   width: 100%;
   max-width: 350px;
-  margin: 20px 0;
+  margin: 40px 0 0px;
   align-self: center;
   grid-template-columns: repeat(7, 1fr);
 `
@@ -29,9 +29,9 @@ export const Page = styled.h1`
     opacity: 0.5;
   }
   @media (max-width: 380px) {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     font-size: 12px;
-    padding-top: 9px;
+    padding-top: 12px;
   }
 `

@@ -26,6 +26,7 @@ const Pagination: React.FC<props> = ({ count, limit }) => {
   useEffect(() => {
     setPages(getPagesNumber(count, limit))
     setCurrent(0)
+    setStart(0)
   }, [count])
 
   function handlePage(index: number) {
