@@ -28,55 +28,55 @@ yarn dev
 ├── src/
 |   ├── components/                 # all components of project
 |   |   ├── Layout/                  
-|   |   |   ├── index.tsx           # 
+|   |   |   ├── index.tsx           # define the main structure of the project
 |   |   |   ├── styles.ts           # styling of components
 |   |   ├── Nav/                     
-|   |   |   ├── index.tsx           # 
+|   |   |   ├── index.tsx           # component that allows browse the pages 
 |   |   |   ├── styles.ts           # styling of components
-|   |   ├── Header/                 
-|   |   |   ├── index.tsx           # 
+|   |   ├── Header/                  
+|   |   |   ├── index.tsx           # home page header component
 |   |   |   ├── styles.ts           # styling of components
-|   |   ├── ListAnimes              # 
-|   |   |   ├── index.tsx           # 
+|   |   ├── ListAnimes              
+|   |   |   ├── index.tsx           # component that allows the listing of animes by category
 |   |   |   ├── styles.ts           # styling of components
 |   |   ├── CardAnime/              
-|   |   |   ├── index.tsx           # 
+|   |   |   ├── index.tsx           # card that shows anime information
 |   |   |   ├── styles.ts           # styling of components
 |   |   ├── ListTrending             
-|   |   |   ├── index.tsx           # 
+|   |   |   ├── index.tsx           # component that allows the listing of trending anime
 |   |   |   ├── styles.ts           # styling of components
-|   |   ├── CardTrendig/            # 
-|   |   |   ├── index.tsx            
+|   |   ├── CardTrendig/             
+|   |   |   ├── index.tsx           # card that shows anime trending information
 |   |   |   ├── styles.ts           # styling of components
 |   |   ├── Pagination/              
-|   |   |   ├── index.tsx           # 
+|   |   |   ├── index.tsx           # component that lets you page search results
 |   |   |   ├── styles.ts           # styling of components
-|   |   ├── utils/                    
-|   |   |   ├── anime.ts            # 
-|   |   |   ├── date.ts             # styling of components
-|   |   |   ├── trending.ts         # styling of components
+|   |   ├── utils/                  # utils function used in components
+|   |   |   ├── anime.ts            
+|   |   |   ├── date.ts            
+|   |   |   ├── trending.ts         
 |   ├── pages/                      # all project pages.
-|   |   ├── anime/
+|   |   ├── anime/                  # page of selected anime
 |   |   |   └── [id].tsx            # 
-|   |   ├── animes/
+|   |   ├── animes/                 # page of searched anim
 |   |   |   └── index.tsx           # 
-|   |   ├── \_app.tsx               #
-|   |   ├── \_document.tsx          #
+|   |   ├── \_app.tsx               
+|   |   ├── \_document.tsx          
 |   |   └── index.tsx               # index page
 |   ├── context/                    # global states
 |   |   └── search.tsx              #       
 |   ├── services/                   # all project external services
-|   |   └── api.ts                  #
-|   |   └── fakeapi.ts              #     
-|   |   └── fakeapiType.d.ts
+|   |   └── api.ts                  # axios elements initilized to call external resources
+|   |   └── fakeapi.ts              # a specific anime to simulate a call for anime that can be put as the header of the home page   
+|   |   └── fakeapiType.d.ts        # anime json type
 |   ├── styles/                      # all project pages.
 |   |   ├── pages/
-|   |   |   └── Anime.ts            # 
-|   |   |   └── Animes.ts           # 
-|   |   |   └── Home.ts             # 
-|   |   └── global.ts               # 
-|   |   └── styles.d.ts             # 
-|   |   └── theme.ts                # 
+|   |   |   └── Anime.ts             
+|   |   |   └── Animes.ts            
+|   |   |   └── Home.ts              
+|   |   └── global.ts               # global style of project 
+|   |   └── styles.d.ts             # type of global theme
+|   |   └── theme.ts                # project theme
 |   ├── utils/                      # all project pages.
 |   |   ├── anime.ts
 ├── README.md
