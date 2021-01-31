@@ -8,7 +8,7 @@ Hero anime is a responsive website created to show anime information, such as na
 
 ## Instalation 	
 
-Go to cmd and run the code below 	
+Go to project terminal and run the code below 	
 
 ```sh	
 yarn install	
