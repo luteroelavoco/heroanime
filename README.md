@@ -38,7 +38,7 @@ https://kitsu.io/api/edge//trending/anime
 A list of 10 animes to be released this year
  
 ```sh	
-https://kitsu.io/api/edge/anime?filter[seasonYear]=year
+https://kitsu.io/api/edge/anime?filter[seasonYear]=2021
 ```	
 ![](public/this_year.png)	
 
@@ -59,3 +59,31 @@ A list of 10 samurai anime
 https://kitsu.io/api/edge/anime?filter[categories]=samurai
 ```	
 ![](public/samurai.png)	
+
+* Select anime
+
+show selected anime information
+ 
+```sh	
+https://kitsu.io/api/edge/anime/11
+```	
+![](public/seleted_anime.png)	
+
+* Search anime
+
+Search for an interesting anime
+ 
+```sh	
+https://kitsu.io/api/edge/anime?filter[text]=naruto
+```	
+![](public/search.png)	
+
+* Pagination on searching
+
+Pagination for search results
+ 
+```sh	
+https://kitsu.io/api/edge/anime?filter[text]=naruto&page[limit]=20&page[offset]=0
+```	
+![](public/pagination.png)	
+
