@@ -35,7 +35,7 @@ https://kitsu.io/api/edge//trending/anime
 
 * This year
 
-A list of 10 animes to be released this year
+List of 10 animes to be released this year
  
 ```sh	
 https://kitsu.io/api/edge/anime?filter[seasonYear]=2021
@@ -44,7 +44,7 @@ https://kitsu.io/api/edge/anime?filter[seasonYear]=2021
 
 * Midle school
 
-A list of 10 high school anime
+List of 10 high school anime
  
 ```sh	
 https://kitsu.io/api/edge/anime?filter[categories]=midle-school
@@ -53,7 +53,7 @@ https://kitsu.io/api/edge/anime?filter[categories]=midle-school
 
 * Samurai
 
-A list of 10 samurai anime
+List of 10 samurai anime
  
 ```sh	
 https://kitsu.io/api/edge/anime?filter[categories]=samurai
@@ -87,3 +87,18 @@ https://kitsu.io/api/edge/anime?filter[text]=naruto&page[limit]=20&page[offset]=
 ```	
 ![](public/pagination.png)	
 
+## Meta	
+
+Author - Lutero Elavoco
+
+programmer -  [Lutero Elavoco](https://www.linkedin.com/in/l%C3%BAtero-elavoco-5951b619b/) - luteroelavoco90@gmail.com	
+
+https://heroanime.vercel.app/
+
+## Contributing 	
+
+1. Fork it (https://github.com/cientista1/heroanime)	
+2. Create your feature branch (`git checkout -b feature/fooBar`)	
+3. Commit your changes (`git commit -am 'Add some fooBar'`)	
+4. Push to the branch (`git push origin feature/fooBar`)	
+5. Create a new Pull Request
