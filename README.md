@@ -21,6 +21,68 @@ After all dependecies installed
 ```sh	
 yarn dev 	
 ```	
+## Project structure
+```
+.
+
+├── src/
+|   ├── components/                 # all components of project
+|   |   ├── Layout/                  
+|   |   |   ├── index.tsx           # 
+|   |   |   ├── styles.ts           # styling of components
+|   |   ├── Nav/                     
+|   |   |   ├── index.tsx           # 
+|   |   |   ├── styles.ts           # styling of components
+|   |   ├── Header/                 
+|   |   |   ├── index.tsx           # 
+|   |   |   ├── styles.ts           # styling of components
+|   |   ├── ListAnimes              # 
+|   |   |   ├── index.tsx           # 
+|   |   |   ├── styles.ts           # styling of components
+|   |   ├── CardAnime/              
+|   |   |   ├── index.tsx           # 
+|   |   |   ├── styles.ts           # styling of components
+|   |   ├── ListTrending             
+|   |   |   ├── index.tsx           # 
+|   |   |   ├── styles.ts           # styling of components
+|   |   ├── CardTrendig/            # 
+|   |   |   ├── index.tsx            
+|   |   |   ├── styles.ts           # styling of components
+|   |   ├── Pagination/              
+|   |   |   ├── index.tsx           # 
+|   |   |   ├── styles.ts           # styling of components
+|   |   ├── utils/                    
+|   |   |   ├── anime.ts            # 
+|   |   |   ├── date.ts             # styling of components
+|   |   |   ├── trending.ts         # styling of components
+|   ├── pages/                      # all project pages.
+|   |   ├── anime/
+|   |   |   └── [id].tsx            # 
+|   |   ├── animes/
+|   |   |   └── index.tsx           # 
+|   |   ├── \_app.tsx               #
+|   |   ├── \_document.tsx          #
+|   |   └── index.tsx               # index page
+|   ├── context/                    # global states
+|   |   └── search.tsx              #       
+|   ├── services/                   # all project external services
+|   |   └── api.ts                  #
+|   |   └── fakeapi.ts              #     
+|   |   └── fakeapiType.d.ts
+|   ├── styles/                      # all project pages.
+|   |   ├── pages/
+|   |   |   └── Anime.ts            # 
+|   |   |   └── Animes.ts           # 
+|   |   |   └── Home.ts             # 
+|   |   └── global.ts               # 
+|   |   └── styles.d.ts             # 
+|   |   └── theme.ts                # 
+|   ├── utils/                      # all project pages.
+|   |   ├── anime.ts
+├── README.md
+└── ...
+```
+
 ## Project features
 
 * Trending animes
