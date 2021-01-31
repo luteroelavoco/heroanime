@@ -1,23 +1,21 @@
 import React, { useState, useEffect}from 'react';
 import CardAnime from '../../components/CardAnime';
+import Pagination from '../../components/Pagination';
 import api from '../../services/api';
 import { Container, Title,ListAnimes } from '../../styles/pages/Animes';
 
 const limit = 10;
-function Animes ({ initialAnimes, count }){
-  const [animes, setAnimes] = useState([])
+function Animes ({ animes, count }){
 
-  useEffect(() =>{
-    setAnimes(initialAnimes)
-  },[initialAnimes])
   return (
     <Container>
-      <Title> Find here yours animes</Title>
+      <Title> {animes.length > 0 ? "Find here yours animes" : "Sorry! No anime found"}</Title>
       <ListAnimes>
         {animes.map((anime => (
           <CardAnime key={anime.id} anime={anime} />
         )))}
       </ListAnimes>
+      <Pagination count={count} limit={limit} />
     </Container>
   );
 }
@@ -41,7 +39,7 @@ export async function getServerSideProps({query}){
   const res =   await getAnimes(q, offset)
   return {
     props: {
-      initialAnimes : res.data,
+      animes : res.data,
       count: res.meta.count
     }
   }
