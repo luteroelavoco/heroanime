@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import {
   Container,
   Logo,
@@ -21,13 +22,13 @@ import {
   FaInstagram,
   FaYoutube
 } from 'react-icons/fa'
+import { useSearch } from '../../context/search'
 
 const Nav: React.FC = () => {
   const router = useRouter()
-  const { q } = router.query
   const [showMenu, setShowMenu] = useState(false)
   const [transparent, setTransparent] = useState(true)
-  const [search, setSearch] = useState('')
+  const {search, setSearch} = useSearch();
   const [searchControler, setSearchControler] = useState<any>(true)
 
   useEffect(() => {
@@ -39,11 +40,13 @@ const Nav: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    if(search.length > 0)
-    router.push('/animes?q=' + search)
+    if (search.length > 0){
+      router.push('/animes?q=' + search)
+    }
   }, [search])
+
   useEffect(() => {
-    if (!searchControler){
+    if (searchControler == '') {
       router.push('/')
     }
   }, [searchControler])
@@ -51,7 +54,10 @@ const Nav: React.FC = () => {
   return (
     <Container transparent={transparent}>
       <MenuBar>
-        <Logo> HeroAnime</Logo>
+        <Link href="/">
+          <Logo> HeroAnime</Logo>
+        </Link>
+
         <MenuTogle onClick={() => setShowMenu(!showMenu)}>
           <FaBars />
         </MenuTogle>
@@ -69,11 +75,10 @@ const Nav: React.FC = () => {
             <SearchInput
               type="text"
               value={search}
-              onChange={e =>{
+              onChange={e => {
                 setSearch(e.target.value)
                 setSearchControler(e.target.value)
-              }
-              }
+              }}
               placeholder="search here your animes"
             />
           </SearchDiv>

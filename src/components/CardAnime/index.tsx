@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import {
   Container,
   Content,
@@ -11,22 +12,29 @@ import {
 } from './styles'
 import { Anime } from '../../services/fakeapiType'
 import { FaStar } from 'react-icons/fa'
-import {IoEyeSharp} from 'react-icons/io5'
-import { getEpisodes, getRating } from '../utils/animes'
+import { IoEyeSharp } from 'react-icons/io5'
+import { getRating, getEpisodes } from '../../utils/anime'
 
 interface props {
   anime: Anime
 }
 
-const CardAnime: React.FC<props> = ({anime}) => {
+const CardAnime: React.FC<props> = ({ anime }) => {
+  const router = useRouter()
+
+  function handleNextPage() {
+    router.push(`/anime/${anime.id}`)
+  }
   return (
     <Container>
-      <Image
-        images={anime.attributes.posterImage}
-      />
+      <Image onClick={handleNextPage} images={anime.attributes.posterImage} />
       <Content>
-        <Title> {anime.attributes.canonicalTitle} </Title>
-        <SubTitle> {getEpisodes(anime.attributes.episodeLength)}  </SubTitle>
+        <Title onClick={handleNextPage}>
+          {anime.attributes.canonicalTitle}
+        </Title>
+        <SubTitle onClick={handleNextPage}>
+          {getEpisodes(anime.attributes.episodeLength)}
+        </SubTitle>
         <Bottom>
           <Rating>
             <FaStar />

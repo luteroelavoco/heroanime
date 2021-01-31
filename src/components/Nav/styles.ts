@@ -149,18 +149,18 @@ export const SearchInput = styled.input`
   color: ${props => props.theme.colors.white};
   ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.textColor};
     opacity: 1; /* Firefox */
   }
 
   :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
-    color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.textColor};
   }
 
   ::-ms-input-placeholder {
     /* Microsoft Edge */
-    color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.textColor};
   }
 `
 export const SocialMedias = styled.div<MidiaProps>`

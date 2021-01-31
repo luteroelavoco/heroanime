@@ -15,8 +15,8 @@ export const Container = styled.div`
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   @media (max-width: 480px) {
-    width: 94%;
-    height: 480px;
+    width: 90%;
+    height: 380px;
   }
 `
 
@@ -28,9 +28,8 @@ export const Image = styled.div<propsImage>`
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   cursor: pointer;
-
   @media (max-width: 480px) {
-    height: 380px;
+    height: 280px;
   }
   @media (max-width: 300px) {
     background-image: url(${props => props.images?.tiny});

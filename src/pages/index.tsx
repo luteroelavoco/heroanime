@@ -15,15 +15,15 @@ function Home({ latestAnimes, mdSchoolAnimes, samuraiAnimes, trendings }) {
         <title>Hero Anime</title>
       </Head>
       <Header anime={TopAnime} />
-      <ListAnimes title="Latest animes" animes={latestAnimes} />
-       <ListTrendigAnimes trendings={trendings} />
+      <ListTrendigAnimes trendings={trendings} />
+      <ListAnimes title="This year" animes={latestAnimes} />
       <ListAnimes title="Middle school" animes={mdSchoolAnimes} />
       <ListAnimes title="Samurai" animes={samuraiAnimes} />
     </Container>
   )
 }
 
-async function getAnimes(seasonYear: any, slug: string) {
+export async function getAnimes(seasonYear: any, slug: string) {
   const { data } = await api.get('anime', {
     params: {
       'filter[seasonYear]': seasonYear,
@@ -32,7 +32,7 @@ async function getAnimes(seasonYear: any, slug: string) {
   })
   return data.data
 }
-async function getTrendings() {
+export async function getTrendings() {
   const { data } = await api.get('/trending/anime')
   return data.data
 }
