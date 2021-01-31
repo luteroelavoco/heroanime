@@ -20,19 +20,15 @@ export const Container = styled.div`
   }
 `
 
-export const Image = styled.div<propsImage>`
+export const Image = styled.img`
   width: 100%;
   height: 300px;
-  background-image: url(${props => props.images?.original});
-  background-size: cover;
+  object-fit: cover;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   cursor: pointer;
   @media (max-width: 480px) {
     height: 280px;
-  }
-  @media (max-width: 300px) {
-    background-image: url(${props => props.images?.tiny});
   }
 `
 export const Content = styled.div`
