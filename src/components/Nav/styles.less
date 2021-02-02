@@ -1,0 +1,145 @@
+.menuBar {
+  width:100%;
+  position: fixed;
+  top:0;
+  padding: 0 20px;
+  overflow: hidden;
+  background-color: @background-color;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+}
+.transparent {
+  background-color: transparent !important;
+}
+
+.logo {
+  width: 150px;
+  float: left;
+}
+
+.logo a {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.8rem;
+  padding: 5px 20px;
+  text-transform: capitalize;
+  color: @primary-color;
+  font-weight: bold;
+}
+.logo a:hover {
+  color: @primary-color;
+}
+
+.menuCon {
+  width: 100%;
+  float: left;
+  margin-left: 50px;
+}
+
+.menuCon .ant-menu-item {
+  padding: 0px 0px;
+  margin: 0 5px !important;
+
+}
+
+.menuCon .ant-menu-submenu-title {
+  padding: 5px 10px;
+}
+
+.menuCon .ant-menu-item a,
+.menuCon .ant-menu-submenu-title a {
+  padding: 5px 0px;
+}
+
+.menuCon .ant-menu-horizontal {
+  border-bottom: none;
+}
+
+.menuCon .leftMenu {
+  float: left;
+}
+
+.menuCon .leftMenu {
+  ul{
+    background-color: transparent;
+    margin-top: 4px;
+    border-color: transparent !important;
+  }
+  li{
+    border-color: transparent !important;
+  }
+  li a{
+    color: white;
+    font-size: 16px !important;
+    border-color: transparent !important;
+  }
+
+
+}
+
+.menuCon .rightMenu {
+  float: right;
+}
+.ant-menu-item-active, .ant-menu-item-active a {
+  color: @primary-color !important;
+  border-color: transparent !important;
+}
+
+
+.barsMenu {
+  float: right;
+  height: 32px;
+  padding: 6px;
+  margin-top: 0px;
+  background: transparent !important;
+  color: @white !important;
+  border-color: transparent !important;
+  display: none !important;
+  font-size: 1.2rem !important;
+}
+
+
+
+.ant-drawer-body {
+  padding: 0;
+}
+
+
+.ant-drawer-body .ant-menu-horizontal>.ant-menu-item,
+.ant-drawer-body .ant-menu-horizontal>.ant-menu-submenu {
+  display: inline-block;
+  width: 100%;
+}
+
+.ant-drawer-body .ant-menu-horizontal {
+  border-bottom: none;
+}
+
+.ant-drawer-body .ant-menu-horizontal>.ant-menu-item:hover {
+  border-bottom-color: transparent;
+}
+
+@media (max-width: 767px) {
+  .barsMenu {
+    display: block !important;
+  }
+
+  .leftMenu,
+  .rightMenu {
+    display: none;
+  }
+
+  .logo a {
+    margin-left: -20px;
+  }
+
+  .menuCon .ant-menu-item,
+  .menuCon .ant-menu-submenu-title {
+    padding: 1px 20px;
+  }
+
+  .logo a {
+    padding: 10px 20px;
+  }
+}

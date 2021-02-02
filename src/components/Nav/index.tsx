@@ -65,9 +65,8 @@ const Nav: React.FC = () => {
       <NavBar show={showMenu}>
         <Menu>
           {menu.map(item => (
-            <MenuItem>
+            <MenuItem key={item.slug}>
               <LinkScroll
-                key={item.slug}
                 activeClass="active"
                 onSetActive={()=> setShowMenu(false)}
                 to={item.slug}
