@@ -1,35 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
+import './styles.less'
 import { useRouter } from 'next/router'
-import {
-  Container,
-  SubContainer,
-  SubItem,
-  Title,
-  Description,
-  Button
-} from './styles'
-import { Anime } from '../../services/fakeapiType'
+import { Typography, Button } from 'antd'
+import { animeProps } from '../../helpers/interfaces'
 import { Abbreviate } from '../../utils/anime'
+const { Title, Text } = Typography
 
-interface props {
-  anime: Anime
-}
-
-const Header: React.FC<props> = ({ anime }) => {
+const Header: React.FC<animeProps> = ({ anime }) => {
   const router = useRouter()
+  const [loading, setLoading] = useState(false)
 
   function handleNextPage() {
+    setLoading(true)
     router.push(`/anime/${anime.id}`)
   }
   return (
-    <Container>
+    <div className="container-header">
       <Title> {anime.attributes.titles.en} </Title>
-      <SubContainer>
-        <SubItem> {anime.attributes.ageRatingGuide} </SubItem>
-      </SubContainer>
-      <Description>{Abbreviate(anime.attributes.description)}</Description>
-      <Button className="button" type="button" onClick={handleNextPage}> See more </Button>
-    </Container>
+      <Title level={5}>{anime.attributes.ageRatingGuide}</Title>
+      <Text className="header-text">
+        {Abbreviate(anime.attributes.description)}
+      </Text>
+      <Button type="primary" danger size="large" onClick={handleNextPage}  loading={loading}>
+        See more
+      </Button>
+    </div>
   )
 }
 

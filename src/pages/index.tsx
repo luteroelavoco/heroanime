@@ -2,11 +2,11 @@ import React from 'react'
 import '../styles/pages/Home.less'
 import Head from 'next/head'
 import Header from '../components/Header'
-import { TopAnime } from '../services/fakeapi'
 import ListAnimes from '../components/ListAnimes'
-import { getCurrenYear } from '../components/utils/date'
 import ListTrendigAnimes from '../components/ListTrendigAnimes'
 import api from '../services/api'
+import { TopAnime } from '../services/fakeapi'
+import { getCurrenYear } from '../components/utils/date'
 
 function Home({ latestAnimes, mdSchoolAnimes, samuraiAnimes, trendings }) {
   return (
