@@ -7,3 +7,8 @@ export interface animeProps {
 export interface trendingsProps{
   trendings : any
 }
+
+export interface animesProps {
+  title: string,
+  animes: any,
+}

@@ -5,7 +5,7 @@ import { url } from '../../services/api'
 import { getTrendings, getAnimes } from '../index'
 import ListAnimes from '../../components/ListAnimes'
 import ListTrendigAnimes from '../../components/ListTrendigAnimes'
-import { getCurrenYear } from '../../components/utils/date'
+import { getCurrenYear } from '../../utils/date'
 import { FaStar } from 'react-icons/fa'
 import {
   BgImage,

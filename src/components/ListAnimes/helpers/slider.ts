@@ -1,4 +1,4 @@
-export var settingsListAnime = {
+const settings = {
   className: 'slider variable-width',
   dots: false,
   infinite: true,
@@ -21,5 +21,6 @@ export var settingsListAnime = {
   ]
 }
 
+export default settings
 
 

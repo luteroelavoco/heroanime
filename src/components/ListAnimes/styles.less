@@ -1,0 +1,28 @@
+
+.container-animes {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 40px auto 0 auto;
+}
+
+.container-animes>h4 {
+  color : @white;
+  margin-left: 10vw;
+  font-weight: 300;
+}
+
+.carrousel-animes {
+  padding:0px 40px ;
+  width: 100%;
+  max-width: 92vw;
+  margin: 10px auto 0;
+  @media (max-width: 580px){
+    padding:0px 10px 0px 10px;
+    max-width: 89vw;
+  }
+  @media (max-width: 320px){
+    max-width: 85vw;
+    padding:0px 15px 0px 10px;
+  }
+}

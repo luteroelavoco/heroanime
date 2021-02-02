@@ -1,33 +1,29 @@
-import React, { useState, useEffect} from 'react';
-import Slider from "react-slick";
-import { Carrousel, Container, Title } from './styles';
-import {settingsListAnime as settings} from '../utils/animes'
-import CardAnime from '../CardAnime';
+import React from 'react'
+import './styles.less'
+import Slider from 'react-slick'
+import settings from './helpers/slider'
+import { Typography } from 'antd';
+import { animesProps } from '../../helpers/interfaces'
+import CardAnime from '../CardAnime'
+const { Title } = Typography;
 
-interface props {
-  title: string,
-  animes: any,
-}
-
-const ListAnimes: React.FC<props> = ({title, animes}) => {
-
+const ListAnimes: React.FC<animesProps> = ({ title, animes }) => {
   return (
-    <Container className={title.toLocaleLowerCase().replace(' ','_')}>
-      <Title>{title}</Title>
-      <Carrousel>
+    <div
+      className={
+        'container-animes ' + title.toLocaleLowerCase().replace(' ', '_')
+      }
+    >
+      <Title level={4}>{title}</Title>
+      <div className="carrousel-animes">
         <Slider {...settings}>
           {animes?.map(anime => (
-             <CardAnime key={anime.id} anime={anime} />
+            <CardAnime key={anime.id} anime={anime} />
           ))}
-
         </Slider>
-      </Carrousel>
-
-    </Container>
-  );
+      </div>
+    </div>
+  )
 }
 
-
-
-
-export default ListAnimes;
+export default ListAnimes

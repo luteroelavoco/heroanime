@@ -6,7 +6,7 @@ import ListAnimes from '../components/ListAnimes'
 import ListTrendigAnimes from '../components/ListTrendigAnimes'
 import api from '../services/api'
 import { TopAnime } from '../services/fakeapi'
-import { getCurrenYear } from '../components/utils/date'
+import { getCurrenYear } from '../utils/date'
 
 function Home({ latestAnimes, mdSchoolAnimes, samuraiAnimes, trendings }) {
   return (

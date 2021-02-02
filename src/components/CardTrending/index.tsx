@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import { Anime } from '../../services/animeType'
-import { Abbreviate } from '../utils/trending'
+import { Abbreviate } from '../../utils/anime'
 import {
   Container,
   Image,
@@ -33,7 +33,7 @@ const CardTrending: React.FC<props> = ({ anime }) => {
           {' '}
           Available on {anime.attributes.showType}
         </SubTitle>
-        <Desc> Synopsis : {Abbreviate(anime.attributes.synopsis)}</Desc>
+        <Desc> Synopsis : {Abbreviate(anime.attributes.synopsis,15)}</Desc>
         <SeeMore  onClick={() => handleNextPage()}> See more </SeeMore>
       </Content>
     </Container>
