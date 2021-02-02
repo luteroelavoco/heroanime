@@ -13,16 +13,13 @@ function RightMenu() {
   const [canGoBack, setcanGoBack] = useState<any>(false)
 
   useEffect(() => {
-    if (search.length > 0 && !canGoBack) {
+    if (search.length > 0)
       router.push('/animes?q=' + search)
-    }
+    else
+      router.push('/animes')
   }, [search])
 
-  useEffect(() => {
-    if (canGoBack == '') {
-      router.push('/')
-    }
-  }, [canGoBack])
+
   const onChange = e => {
     setSearch(e.target.value)
     setcanGoBack(e.target.value)
