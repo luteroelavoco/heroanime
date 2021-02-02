@@ -34,9 +34,12 @@ export function routerChanging(
       setMenu(initialMenu.filter((item, index) => index < 2))
       setActiveMoreAnimes(false)
       setSearch('')
-    } else {
+    } else if((url.includes('animes'))) {
       setMenu([])
       setActiveMoreAnimes(true)
+    }
+    else{
+      setActiveMoreAnimes(false)
     }
   }
   router.events.on('routeChangeStart', handleRouteChange)

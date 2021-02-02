@@ -1,8 +1,16 @@
 
-.rigth-nav {
+.right-menu {
   height: 50px;
   display: flex;
   align-items: center;
+  @media (max-width: 1020px){
+    flex-direction: column;
+    width: 100%;
+    max-width: 60vw;
+    margin-left: 15px;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
 }
 
 .input {
@@ -12,6 +20,39 @@
 }
 .input , .ant-input{
   background-color: transparent !important;
-  color: @white !important
+  color: @white !important;
+  @media (max-width: 1020px){
+    background-color: @background-color !important;
+    z-index: 8 !important;
+  }
+}
 
+.right-menu-social {
+  width: 100px;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  z-index: 1;
+  justify-content: space-between;
+  svg {
+    cursor: pointer;
+    color: @white;
+    transition: 0.5s all;
+    &:hover {
+      color: @primary-color;
+    }
+  }
+  @media (max-width: 1020px){
+    position: absolute;
+    width: 90%;
+    max-width: 400px;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin: 0px 0px 0;
+    font-size: 20px;
+    height: 100px;
+    bottom: 5px;
+    z-index: 1;
+  }
 }

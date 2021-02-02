@@ -1,7 +1,7 @@
 .menuBar {
-  width:100%;
+  width: 100%;
   position: fixed;
-  top:0;
+  top: 0;
   padding: 0 20px;
   overflow: hidden;
   background-color: @background-color;
@@ -10,7 +10,9 @@
   z-index: 100;
 }
 .transparent {
-  background-color: transparent !important;
+  @media (min-width: 1020px) {
+    background-color: transparent !important;
+  }
 }
 
 .logo {
@@ -40,16 +42,6 @@
 .menuCon .ant-menu-item {
   padding: 0px 0px;
   margin: 0 5px !important;
-
-}
-
-.menuCon .ant-menu-submenu-title {
-  padding: 5px 10px;
-}
-
-.menuCon .ant-menu-item a,
-.menuCon .ant-menu-submenu-title a {
-  padding: 5px 0px;
 }
 
 .menuCon .ant-menu-horizontal {
@@ -61,31 +53,25 @@
 }
 
 .menuCon .leftMenu {
-  ul{
-    background-color: transparent;
-    margin-top: 4px;
-    border-color: transparent !important;
-  }
-  li{
-    border-color: transparent !important;
-  }
-  li a{
+  li a {
     color: white;
     font-size: 16px !important;
     border-color: transparent !important;
   }
-
-
 }
 
 .menuCon .rightMenu {
   float: right;
 }
-.ant-menu-item-active, .ant-menu-item-active a {
+.ant-menu-item-active,
+.ant-menu-item-active a {
   color: @primary-color !important;
   border-color: transparent !important;
+  background-color: transparent !important;
 }
-
+.ant-menu-item-selected {
+  background-color: transparent !important;
+}
 
 .barsMenu {
   float: right;
@@ -99,28 +85,24 @@
   font-size: 1.2rem !important;
 }
 
-
+.ant-drawer-content-wrapper {
+  width: 70vw !important;
+}
+.ant-drawer-header {
+  background-color: @background-color!important;
+}
+.ant-drawer-title {
+  color: @white;
+}
 
 .ant-drawer-body {
-  padding: 0;
-}
-
-
-.ant-drawer-body .ant-menu-horizontal>.ant-menu-item,
-.ant-drawer-body .ant-menu-horizontal>.ant-menu-submenu {
-  display: inline-block;
   width: 100%;
+
+  padding: 0;
+  background-color: @background-color!important;
 }
 
-.ant-drawer-body .ant-menu-horizontal {
-  border-bottom: none;
-}
-
-.ant-drawer-body .ant-menu-horizontal>.ant-menu-item:hover {
-  border-bottom-color: transparent;
-}
-
-@media (max-width: 767px) {
+@media (max-width: 1020px) {
   .barsMenu {
     display: block !important;
   }
@@ -132,14 +114,5 @@
 
   .logo a {
     margin-left: -20px;
-  }
-
-  .menuCon .ant-menu-item,
-  .menuCon .ant-menu-submenu-title {
-    padding: 1px 20px;
-  }
-
-  .logo a {
-    padding: 10px 20px;
   }
 }

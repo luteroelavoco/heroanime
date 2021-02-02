@@ -1,6 +1,6 @@
 import React from 'react'
 import Footer from '../Footer'
-import Nav from '../Nav/teste'
+import Nav from '../Nav'
 import { Container } from './styles'
 import SearchProvider from '../../context/search'
 const Layout: React.FC = ({ children }) => {

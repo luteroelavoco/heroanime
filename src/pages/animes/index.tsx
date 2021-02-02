@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import Head from 'next/head'
 import CardAnime from '../../components/CardAnime';
 import Pagination from '../../components/Pagination';
@@ -7,6 +7,10 @@ import { Container, Title,ListAnimes } from '../../styles/pages/Animes';
 
 const limit = 20;
 function Animes ({ animes, count }){
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+  },[])
 
   return (
     <Container>
