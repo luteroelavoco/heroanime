@@ -1,26 +1,25 @@
 import React from 'react'
+import "./styles.less"
+import { Typography } from 'antd';
 import Slider from 'react-slick'
-import { Container, Carrousel, Title } from './styles'
-import { settingsListTrending as settings } from '../utils/trending'
+import settings  from './helpers/slider'
+import {trendingsProps} from '../../helpers/interfaces'
 import CardTrending from '../CardTrending'
+const { Title } = Typography;
 
-interface props{
-  trendings : any
-}
-
-const ListTrendigAnimes: React.FC<props> = ({trendings}) => {
+const ListTrendigAnimes: React.FC<trendingsProps> = ({trendings}) => {
 
   return (
-    <Container className="trending">
-      <Title>Trending</Title>
-      <Carrousel>
+    <div className="container-trendings">
+      <Title level={4}>Trending</Title>
+      <div className="carrousel-trendings">
         <Slider {...settings}>
           {trendings.map(trending => (
             <CardTrending key={trending.id} anime={trending} />
           ))}
         </Slider>
-      </Carrousel>
-    </Container>
+      </div>
+    </div>
   )
 }
 

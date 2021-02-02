@@ -3,7 +3,7 @@ import { Router } from 'next/router'
 export const initialMenu = [
   {
     name: 'trending',
-    slug: 'trending'
+    slug: 'container-trendings'
   },
   {
     name: 'this year',
