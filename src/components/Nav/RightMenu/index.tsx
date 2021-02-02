@@ -15,8 +15,7 @@ function RightMenu() {
   useEffect(() => {
     if (search.length > 0)
       router.push('/animes?q=' + search)
-    else
-      router.push('/animes')
+    
   }, [search])
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
+import '../styles/pages/Home.less'
 import Head from 'next/head'
-import { Container } from '../styles/pages/Home'
 import Header from '../components/Header'
 import { TopAnime } from '../services/fakeapi'
 import ListAnimes from '../components/ListAnimes'
@@ -10,7 +10,12 @@ import api from '../services/api'
 
 function Home({ latestAnimes, mdSchoolAnimes, samuraiAnimes, trendings }) {
   return (
-    <Container coverImage={TopAnime.attributes.coverImage}>
+    <div
+      className="container-home"
+      style={{
+        backgroundImage: `url(${TopAnime.attributes.coverImage.original})`
+      }}
+    >
       <Head>
         <title>Hero Anime</title>
       </Head>
@@ -19,7 +24,7 @@ function Home({ latestAnimes, mdSchoolAnimes, samuraiAnimes, trendings }) {
       <ListAnimes title="This year" animes={latestAnimes} />
       <ListAnimes title="Middle school" animes={mdSchoolAnimes} />
       <ListAnimes title="Samurai" animes={samuraiAnimes} />
-    </Container>
+    </div>
   )
 }
 
@@ -37,10 +42,10 @@ export async function getTrendings() {
   return data.data
 }
 export async function getStaticProps() {
-  const latestAnimes =  await getAnimes(getCurrenYear(), null)
+  const latestAnimes = await getAnimes(getCurrenYear(), null)
   const mdSchoolAnimes = await getAnimes(null, 'middle-school')
-  const samuraiAnimes =  await getAnimes(null, 'samurai')
-  const trendings =  await getTrendings();
+  const samuraiAnimes = await getAnimes(null, 'samurai')
+  const trendings = await getTrendings()
   return {
     props: {
       latestAnimes,

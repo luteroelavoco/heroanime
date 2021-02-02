@@ -26,7 +26,7 @@ export function routerChanging(
   setSearch: Function
 ) {
   const handleRouteChange = (url: string, { shallow }) => {
-    if (url == '/') {
+    if (url == '/' || url == '') {
       setMenu(initialMenu)
       setSearch('')
       setActiveMoreAnimes(false)
