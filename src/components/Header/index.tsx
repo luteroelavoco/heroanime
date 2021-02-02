@@ -21,7 +21,13 @@ const Header: React.FC<animeProps> = ({ anime }) => {
       <Text className="header-text">
         {Abbreviate(anime.attributes.description)}
       </Text>
-      <Button type="primary" danger size="large" onClick={handleNextPage}  loading={loading}>
+      <Button
+        type="primary"
+        danger
+        size="large"
+        onClick={handleNextPage}
+        loading={loading}
+      >
         See more
       </Button>
     </div>

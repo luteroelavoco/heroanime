@@ -10,7 +10,7 @@ import {
   Rating,
   Views
 } from './styles'
-import { Anime } from '../../services/fakeapiType'
+import { Anime } from '../../services/animeType'
 import { FaStar } from 'react-icons/fa'
 import { IoEyeSharp } from 'react-icons/io5'
 import { getRating, getEpisodes } from '../../utils/anime'

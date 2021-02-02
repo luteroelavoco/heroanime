@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { Anime } from '../../services/fakeapiType'
+import { Anime } from '../../services/animeType'
 import { Abbreviate } from '../utils/trending'
 import {
   Container,
