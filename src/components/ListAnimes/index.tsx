@@ -4,7 +4,7 @@ import Slider from 'react-slick'
 import settings from './helpers/slider'
 import { Typography } from 'antd';
 import { animesProps } from '../../helpers/interfaces'
-import CardAnime from '../CardAnime'
+import CardAnime from '../CardAnime/teste'
 const { Title } = Typography;
 
 const ListAnimes: React.FC<animesProps> = ({ title, animes }) => {

@@ -19,6 +19,7 @@ const CardTrending: React.FC<animeProps> = ({ anime }) => {
     <div className="container-card-trending">
       <Card
         hoverable
+        bordered={false}
         style={{ width: '100%' }}
         onClick={() => handleNextPage()}
         cover={
