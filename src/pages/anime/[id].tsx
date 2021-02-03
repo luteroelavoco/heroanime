@@ -1,32 +1,22 @@
 import React, { useState, useEffect } from 'react'
+import '../../styles/pages/Anime.less'
 import Head from 'next/head'
 import ReactPlayer from 'react-player/youtube'
-import { url } from '../../services/api'
-import { getTrendings, getAnimes } from '../index'
 import ListAnimes from '../../components/ListAnimes'
 import ListTrendigAnimes from '../../components/ListTrendigAnimes'
+import { url } from '../../services/api'
+import { getTrendings, getAnimes } from '../index'
 import { getCurrenYear } from '../../utils/date'
 import { FaStar } from 'react-icons/fa'
-import {
-  BgImage,
-  Container,
-  Content,
-  ImgContainer,
-  Image,
-  CardAnime,
-  Information,
-  Title,
-  SubTitle,
-  AverageRating,
-  Description,
-  Button,
-  PlayerWrapper
-} from '../../styles/pages/Anime'
+import { Typography, Button, Image  } from 'antd'
+
+
+const { Title, Paragraph } = Typography
+
 import { getRating, getEpisodes, Abbreviate } from '../../utils/anime'
 function Anime({ anime }) {
   const [latestAnimes, setLatestAnimes] = useState([])
   const [trendings, setTrendings] = useState([])
-
   const [playing, setPlaying] = useState(false)
   const [youtubeVideoId, setYoutubeVideoId] = useState(
     anime.attributes.youtubeVideoId
@@ -45,41 +35,48 @@ function Anime({ anime }) {
   }, [])
 
   return (
-    <Container>
+    <div className="container-page-anime">
       <Head>
         <title>Hero anime : {anime.attributes.canonicalTitle}</title>
       </Head>
-      <BgImage images={anime.attributes.coverImage} />
-      <Content>
-        <CardAnime>
-          <ImgContainer>
-            <Title>{anime.attributes.canonicalTitle} </Title>
+      <div
+        className="background"
+        style={{
+          backgroundImage: `url(${anime.attributes.coverImage.original})`
+        }}
+      />
+      <div className="content">
+        <div className="card">
+          <div className="image-container">
+            <Title level={2}>{anime.attributes.canonicalTitle} </Title>
             <Image
               src={anime.attributes.posterImage.original}
               alt={anime.attributes.canonicalTitle}
             />
-          </ImgContainer>
-          <Information>
-            <Title>{anime.attributes.canonicalTitle} </Title>
-            <SubTitle>Available on {anime.attributes.subtype} </SubTitle>
-            <SubTitle> {getEpisodes(anime.attributes.episodeLength)} </SubTitle>
-            <SubTitle>{anime.attributes.ageRatingGuide} </SubTitle>
-            <AverageRating>
+          </div>
+          <div className="information">
+            <Title level={2}>{anime.attributes.canonicalTitle} </Title>
+            <Title level={4}>Available on {anime.attributes.subtype} </Title>
+            <Title level={4}>
+              {getEpisodes(anime.attributes.episodeLength)}{' '}
+            </Title>
+            <Title level={4}>{anime.attributes.ageRatingGuide} </Title>
+            <Title level={3}>
               <FaStar />
               {getRating(anime.attributes.averageRating)}
-            </AverageRating>
+            </Title>
             {youtubeVideoId && (
-              <Button className="button" onClick={() => setPlaying(!playing)}>
+              <Button type="primary" shape="round"  onClick={() => setPlaying(!playing)}>
                 {playing ? 'Pause trailer' : 'Play trailer'}
               </Button>
             )}
-            <Description>
-              {Abbreviate(anime.attributes.description, 100)}
-            </Description>
-          </Information>
-        </CardAnime>
+            <Paragraph>
+              {Abbreviate(anime.attributes.description, 500)}
+            </Paragraph>
+          </div>
+        </div>
         {youtubeVideoId && (
-          <PlayerWrapper>
+          <div className="player-wrapper">
             <ReactPlayer
               playing={playing}
               onPlay={() => setPlaying(true)}
@@ -88,12 +85,12 @@ function Anime({ anime }) {
               width="100%"
               height="100%"
             />
-          </PlayerWrapper>
+          </div>
         )}
-      </Content>
+      </div>
       <ListTrendigAnimes trendings={trendings} />
       <ListAnimes title="This year" animes={latestAnimes} />
-    </Container>
+    </div>
   )
 }
 
