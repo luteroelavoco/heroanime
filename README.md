@@ -21,6 +21,16 @@ After all dependecies installed
 ```sh	
 yarn dev 	
 ```	
+
+## Features
+- [ReactJs](https://reactjs.org/)
+- [NextJS](https://nextjs.org/)
+- [Vercel](https://vercel.com/)
+- [Less](http://lesscss.org/)
+- [Eslint](https://eslint.org/)
+- [prettier](https://prettier.io/)
+
+
 ## Project structure
 ```
 .
