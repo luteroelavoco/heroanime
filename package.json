@@ -27,8 +27,7 @@
     "react-icons": "^4.1.0",
     "react-player": "^2.8.2",
     "react-scroll": "^1.8.1",
-    "react-slick": "^0.28.0",
-    "sass": "^1.32.5"
+    "react-slick": "^0.28.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.16",

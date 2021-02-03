@@ -58,7 +58,7 @@ function Anime({ anime }) {
             <Title level={2}>{anime.attributes.canonicalTitle} </Title>
             <Title level={4}>Available on {anime.attributes.subtype} </Title>
             <Title level={4}>
-              {getEpisodes(anime.attributes.episodeLength)}{' '}
+              {getEpisodes(anime.attributes.episodeLength)}
             </Title>
             <Title level={4}>{anime.attributes.ageRatingGuide} </Title>
             <Title level={3}>
