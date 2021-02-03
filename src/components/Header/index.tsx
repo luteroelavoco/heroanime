@@ -19,7 +19,7 @@ const Header: React.FC<animeProps> = ({ anime }) => {
       <Title> {anime.attributes.titles.en} </Title>
       <Title level={5}>{anime.attributes.ageRatingGuide}</Title>
       <Text className="header-text">
-        {Abbreviate(anime.attributes.description)}
+        {Abbreviate(anime.attributes.description, 125)}
       </Text>
       <Button
         type="primary"

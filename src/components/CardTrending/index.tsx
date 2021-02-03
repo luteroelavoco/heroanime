@@ -18,7 +18,6 @@ const CardTrending: React.FC<animeProps> = ({ anime }) => {
   return (
     <div className="container-card-trending">
       <Card
-
         hoverable
         style={{ width: '100%' }}
         onClick={() => handleNextPage()}
@@ -31,7 +30,7 @@ const CardTrending: React.FC<animeProps> = ({ anime }) => {
       >
         <Meta
           title={anime.attributes.canonicalTitle}
-          description={Abbreviate(anime.attributes.synopsis, 15)}
+          description={Abbreviate(anime.attributes.synopsis, 100)}
         />
         <Button type="primary" loading={loading} onClick={handleNextPage}> See more</Button>
       </Card>

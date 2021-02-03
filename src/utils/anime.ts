@@ -3,11 +3,11 @@ export function Abbreviate(description: string, limit = 20) {
   var rst: string = ''
 
   for (var i = 0; i < desc.length; i++) {
-    rst += ' '+desc[i]
-    if (i == limit) {
+    if (rst.length > limit-1) {
       rst += ' ...'
       break
     }
+    rst += ' '+desc[i]
   }
   return rst
 }
