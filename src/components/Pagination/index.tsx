@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './styles.less'
 import { useRouter } from 'next/router'
 import {
   canGoBack,
@@ -8,17 +9,12 @@ import {
   goBack,
   goForward
 } from './helpers'
-import { Container, Page } from './styles'
+import { paginationProps } from '../../helpers/interfaces'
 
-interface props {
-  count: number
-  limit: number
-}
-
-const Pagination: React.FC<props> = ({ count, limit }) => {
+const Pagination: React.FC<paginationProps> = ({ count, limit }) => {
   const router = useRouter()
-  const { q  } = router.query
-  const pagelimits = 5
+  const { q } = router.query
+  const pageSize = 5
   const [pages, setPages] = useState([])
   const [current, setCurrent] = useState(0)
   const [start, setStart] = useState(0)
@@ -31,41 +27,41 @@ const Pagination: React.FC<props> = ({ count, limit }) => {
 
   function handlePage(index: number) {
     setCurrent(index)
-    router.push(`/animes?${q ? `q=${q}&`:''}offset=${index * limit}`)
-    window.scrollTo(0, 0);
+    router.push(`/animes?${q ? `q=${q}&` : ''}offset=${index * limit}`)
+    window.scrollTo(0, 0)
   }
   if (pages.length > 1)
     return (
-      <Container>
-        <Page
-          className={canGoBack(start, pagelimits) ? 'active arrow' : 'arrow'}
-          onClick={() => goBack(start, pagelimits, setStart)}
+      <div className="container-pagination">
+        <li
+          className={canGoBack(start, pageSize) ? 'active arrow' : 'arrow'}
+          onClick={() => goBack(start, pageSize, setStart)}
         >
           {'<'}
-        </Page>
+        </li>
         {pages.map((item, index) => {
-          if (canShow(index, start, pagelimits))
+          if (canShow(index, start, pageSize))
             return (
-              <Page
+              <li
                 key={item}
                 className={index == current && 'active'}
                 onClick={() => handlePage(index)}
               >
                 {item}
-              </Page>
+              </li>
             )
         })}
-        <Page
+        <li
           className={
-            canGoForward(start, pagelimits, pages.length)
+            canGoForward(start, pageSize, pages.length)
               ? 'active arrow'
               : 'arrow'
           }
-          onClick={() => goForward(start, pagelimits, pages.length, setStart)}
+          onClick={() => goForward(start, pageSize, pages.length, setStart)}
         >
           {'>'}
-        </Page>
-      </Container>
+        </li>
+      </div>
     )
   return <></>
 }

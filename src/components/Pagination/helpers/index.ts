@@ -7,24 +7,24 @@ export function getPagesNumber(count: number, limit: number): Array<number> {
   return pg
 }
 
-export function canShow(index: number, start: number, pagelimits: number): boolean {
-  return index >= start && index < start + pagelimits;
+export function canShow(index: number, start: number, pageSize: number): boolean {
+  return index >= start && index < start + pageSize;
 }
 
-export function canGoForward(start: number, pagelimits: number, pageslength: number): boolean {
-  return start + pagelimits < pageslength
+export function canGoForward(start: number, pageSize: number, pageslength: number): boolean {
+  return start + pageSize < pageslength
 }
-export function canGoBack(start: number, pagelimits: number): boolean {
-  return start + pagelimits > pagelimits
-}
-
-export function goForward(start: number, pagelimits: number, pageslength: number, setStart: Function) {
-  if(canGoForward(start, pagelimits, pageslength))
-    setStart(start+pagelimits)
+export function canGoBack(start: number, pageSize: number): boolean {
+  return start + pageSize > pageSize
 }
 
-export function goBack(start: number, pagelimits: number, setStart: Function){
-  if(canGoBack(start, pagelimits))
-    setStart(start - pagelimits)
+export function goForward(start: number, pageSize: number, pageslength: number, setStart: Function) {
+  if(canGoForward(start, pageSize, pageslength))
+    setStart(start+pageSize)
+}
+
+export function goBack(start: number, pageSize: number, setStart: Function){
+  if(canGoBack(start, pageSize))
+    setStart(start - pageSize)
 }
 

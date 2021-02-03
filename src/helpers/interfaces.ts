@@ -12,3 +12,8 @@ export interface animesProps {
   title: string,
   animes: any,
 }
+
+export interface paginationProps {
+  count: number
+  limit: number
+}
