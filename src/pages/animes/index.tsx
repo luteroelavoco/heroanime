@@ -1,10 +1,12 @@
 import React,{useEffect} from 'react';
+import "../../styles/pages/Animes.less"
 import Head from 'next/head'
+import {Typography} from 'antd'
 import CardAnime from '../../components/CardAnime';
 import Pagination from '../../components/Pagination';
 import api from '../../services/api';
-import { Container, Title,ListAnimes } from '../../styles/pages/Animes';
 
+const {Title} = Typography;
 const limit = 20;
 function Animes ({ animes, count }){
 
@@ -13,18 +15,18 @@ function Animes ({ animes, count }){
   },[])
 
   return (
-    <Container>
+    <div className="container-page-animes">
       <Head>
         <title>Hero anime : more animes</title>
       </Head>
       <Title> {animes.length > 0 ? "Find here yours animes" : "Sorry! No anime found"}</Title>
-      <ListAnimes>
+      <ul>
         {animes.map((anime => (
           <CardAnime key={anime.id} anime={anime} />
         )))}
-      </ListAnimes>
+      </ul>
       {animes.length > 0 && <Pagination count={count} limit={limit} />}
-    </Container>
+    </div>
   );
 }
 

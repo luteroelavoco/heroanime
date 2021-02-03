@@ -1,22 +1,23 @@
 import React from 'react'
-import { Container, Description, Copyright, Link } from './styles'
+import "./styles.less"
+import { Typography} from 'antd';
+const { Paragraph, Text } = Typography;
 
 const Footer: React.FC = () => {
   return (
-    <Container>
-      <Description>
-        {' '}
+    <div className="container-footer">
+      <Paragraph>
         A simple anime catolog to show my skills in React Js and Next Js.
-      </Description>
-      <Copyright>
+      </Paragraph>
+      <Text>
         Copyright (c) HeroAnime 2021 by
-        <Link href="https://www.linkedin.com/in/cientista1/" target="_blank">
+        <a href="https://www.linkedin.com/in/cientista1/" target="_blank">
           {' '}
           Lutero Elavoco
-        </Link>
+        </a>
         . All rights reserved.
-      </Copyright>
-    </Container>
+      </Text>
+    </div>
   )
 }
 
