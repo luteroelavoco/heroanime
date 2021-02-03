@@ -29,32 +29,44 @@ yarn dev
 |   ├── components/                 # all components of project
 |   |   ├── Layout/                  
 |   |   |   ├── index.tsx           # define the main structure of the project
-|   |   |   ├── styles.ts           # styling of components
-|   |   ├── Nav/                     
+|   |   |   ├── styles.less         # styling of components
+|   |   ├── Nav/
+|   |   |   ├── helpers/
+|   |   |   |   ├── index.ts        # functions and vars used in nav    
+|   |   |   ├── LeftMenu/           
+|   |   |   |   ├── index.ts        # left nav bar components
+|   |   |   |   ├── index.less      # styling of component
+|   |   |   ├── RigthMenu/
+|   |   |   |   ├── index.ts        # right nav bar components
+|   |   |   |   ├── index.less      # styling of component
 |   |   |   ├── index.tsx           # component that allows browse the pages 
-|   |   |   ├── styles.ts           # styling of components
+|   |   |   ├── styles.less           # styling of components
 |   |   ├── Header/                  
 |   |   |   ├── index.tsx           # home page header component
-|   |   |   ├── styles.ts           # styling of components
-|   |   ├── ListAnimes              
+|   |   |   ├── styles.less         # styling of components
+|   |   ├── ListAnimes      
+|   |   |   ├── helpers/
+|   |   |   |   ├── slider.ts       # slider settings 
 |   |   |   ├── index.tsx           # component that allows the listing of animes by category
-|   |   |   ├── styles.ts           # styling of components
+|   |   |   ├── styles.less         # styling of components
 |   |   ├── CardAnime/              
 |   |   |   ├── index.tsx           # card that shows anime information
-|   |   |   ├── styles.ts           # styling of components
-|   |   ├── ListTrending             
+|   |   |   ├── styles.less           # styling of components
+|   |   ├── ListTrending
+|   |   |   ├── helpers/
+|   |   |   |   ├── slider.ts       # slider settings 
 |   |   |   ├── index.tsx           # component that allows the listing of trending anime
-|   |   |   ├── styles.ts           # styling of components
+|   |   |   ├── styles.less         # styling of components
 |   |   ├── CardTrendig/             
 |   |   |   ├── index.tsx           # card that shows anime trending information
-|   |   |   ├── styles.ts           # styling of components
-|   |   ├── Pagination/              
+|   |   |   ├── styles.less         # styling of components
+|   |   ├── Pagination/
+|   |   |   ├── helpers/
+|   |   |   |   ├── index.ts        # pagination function implementation 
 |   |   |   ├── index.tsx           # component that lets you page search results
-|   |   |   ├── styles.ts           # styling of components
-|   |   ├── utils/                  # utils function used in components
-|   |   |   ├── anime.ts            
-|   |   |   ├── date.ts            
-|   |   |   ├── trending.ts         
+|   |   |   ├── styles.less         # styling of components
+|   |   ├── helpers/                
+|   |   |   ├── interface.ts        # project interfaces            
 |   ├── pages/                      # all project pages.
 |   |   ├── anime/                  # page of selected anime
 |   |   |   └── [id].tsx            # 
@@ -68,15 +80,14 @@ yarn dev
 |   ├── services/                   # all project external services
 |   |   └── api.ts                  # axios elements initilized to call external resources
 |   |   └── fakeapi.ts              # a specific anime to simulate a call for anime that can be put as the header of the home page   
-|   |   └── fakeapiType.d.ts        # anime json type
-|   ├── styles/                      # all project pages.
+|   |   └── animeType.d.ts          # anime json type
+|   ├── styles/                     # all project pages.
 |   |   ├── pages/
-|   |   |   └── Anime.ts             
-|   |   |   └── Animes.ts            
-|   |   |   └── Home.ts              
-|   |   └── global.ts               # global style of project 
-|   |   └── styles.d.ts             # type of global theme
-|   |   └── theme.ts                # project theme
+|   |   |   └── Anime.less             
+|   |   |   └── Animes.less            
+|   |   |   └── Home.less              
+|   |   └── global.less             # global style of project 
+|   |   └── theme.less              # project theme
 |   ├── utils/                      # all project pages.
 |   |   ├── anime.ts
 ├── README.md
