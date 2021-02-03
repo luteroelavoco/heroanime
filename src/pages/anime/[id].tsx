@@ -42,7 +42,7 @@ function Anime({ anime }) {
       <div
         className="background"
         style={{
-          backgroundImage: `url(${anime.attributes.coverImage.original})`
+          backgroundImage: `url(${anime.attributes.coverImage?.original})`
         }}
       />
       <div className="content">
