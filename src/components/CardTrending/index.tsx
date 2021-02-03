@@ -14,6 +14,9 @@ const CardTrending: React.FC<animeProps> = ({ anime }) => {
   function handleNextPage() {
     setLoading(true)
     router.push(`/anime/${anime.id}`)
+    setTimeout(() => {
+      setLoading(false)
+    },3000)
   }
   return (
     <div className="container-card-trending">
