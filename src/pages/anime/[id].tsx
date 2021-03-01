@@ -4,8 +4,9 @@ import Head from 'next/head'
 import ReactPlayer from 'react-player/youtube'
 import ListAnimes from '../../components/ListAnimes'
 import ListTrendigAnimes from '../../components/ListTrendigAnimes'
-import { url } from '../../services/api'
-import { getTrendings, getAnimes } from '../index'
+import { getAnime } from '../../services/implementations/Anime'
+import { getAnimes } from '../../services/implementations/Animes'
+import { getTrendings } from '../../services/implementations/Trendings'
 import { getCurrenYear } from '../../utils/date'
 import { FaStar } from 'react-icons/fa'
 import { Typography, Button, Image  } from 'antd'
@@ -94,11 +95,7 @@ function Anime({ anime }) {
   )
 }
 
-async function getAnime(id: any) {
-  const res = await fetch(url + '/anime/' + id)
-  const json = await res.json()
-  return json.data
-}
+
 
 export async function getServerSideProps({ params }) {
   const { id } = params
