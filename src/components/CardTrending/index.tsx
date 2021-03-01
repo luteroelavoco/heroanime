@@ -42,4 +42,4 @@ const CardTrending: React.FC<animeProps> = ({ anime }) => {
   )
 }
 
-export default CardTrending
+export default React.memo(CardTrending)

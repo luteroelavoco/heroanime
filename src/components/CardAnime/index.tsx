@@ -46,4 +46,4 @@ const CardAnime: React.FC<animeProps> = ({ anime }) => {
   )
 }
 
-export default CardAnime
+export default React.memo(CardAnime)

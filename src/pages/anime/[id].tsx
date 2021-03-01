@@ -11,7 +11,6 @@ import { getCurrenYear } from '../../utils/date'
 import { FaStar } from 'react-icons/fa'
 import { Typography, Button, Image  } from 'antd'
 
-
 const { Title, Paragraph } = Typography
 
 import { getRating, getEpisodes, Abbreviate } from '../../utils/anime'
