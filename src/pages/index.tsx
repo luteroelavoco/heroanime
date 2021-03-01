@@ -4,7 +4,8 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import ListAnimes from '../components/ListAnimes'
 import ListTrendigAnimes from '../components/ListTrendigAnimes'
-import api from '../services/api'
+import {getAnimes} from '../services/implementations/Animes'
+import {getTrendings} from  '../services/implementations/Trendings'
 import { TopAnime } from '../services/fakeapi'
 import { getCurrenYear } from '../utils/date'
 
@@ -28,19 +29,8 @@ function Home({ latestAnimes, mdSchoolAnimes, samuraiAnimes, trendings }) {
   )
 }
 
-export async function getAnimes(seasonYear: any, slug: string) {
-  const { data } = await api.get('anime', {
-    params: {
-      'filter[seasonYear]': seasonYear,
-      'filter[categories]': slug
-    }
-  })
-  return data.data
-}
-export async function getTrendings() {
-  const { data } = await api.get('/trending/anime')
-  return data.data
-}
+
+
 export async function getStaticProps() {
   const latestAnimes = await getAnimes(getCurrenYear(), null)
   const mdSchoolAnimes = await getAnimes(null, 'middle-school')
